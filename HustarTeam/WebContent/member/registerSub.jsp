@@ -5,12 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
 <script>
 		alert("가입을 축하합니다. " register);
 		location = "/";
 		</script>
+</head>
+<body>
 
-</body>
 </html>
