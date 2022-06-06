@@ -11,3 +11,4 @@ function fn_submit() {
 	}
 	document.frm.submit(); // 전송
 }
+

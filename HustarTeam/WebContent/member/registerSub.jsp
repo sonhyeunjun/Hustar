@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-		alert("환영합니다. "register);
+		alert("가입을 축하합니다. " register);
 		location = "/";
 		</script>
 
