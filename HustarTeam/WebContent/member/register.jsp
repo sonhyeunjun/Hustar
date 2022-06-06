@@ -32,45 +32,56 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>Login</h2>
+                        <h2>Sign Up</h2>
                         <p>Welcome to Hustar</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>  
 
-    <section class="login spad">
+
+    <section class="signup spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="margin:auto;" >
                     <div class="login__form">
-                        <h3>로그인</h3>
+                        <h3>회원가입</h3>
                         <form action="#">
                             <div class="input__item">
-                                <input type="text" placeholder="Email address">
+                                <input type="text" placeholder="이메일 입력">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password">
+                                <input type="text" placeholder="비밀번호">
                                 <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">로그인 하기</button>
+                            <div class="input__item">
+                                <input type="text" placeholder="이름">
+                                <span class="icon_profile"></span>
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="생일">
+                                <span class="icon_calendar"></span>
+                                
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="Phone number">
+                                <span class="icon_desktop"></span>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
+                            </div>
+                            
+                            <button type="submit" class="site-btn">회원가입</button> 
                         </form>
-                        <a href="#" class="forget_pass">비밀번호 찾기</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="login__register">
-                        <h3>아이디가 없으세요?</h3>
-                        <a href="./signup.html" class="primary-btn">회원가입</a>
+                        <h5>이미 계정이 있습니까? <a href="/member/login.jsp">로그인!</a></h5>
                     </div>
                 </div>
             </div>
-         
         </div>
     </section>
-
 
 	<!-- footer 바닥글-->
 	<%@ include file="/include/footer.jsp"%>

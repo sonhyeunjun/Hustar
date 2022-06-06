@@ -16,6 +16,7 @@
 	
 	<!-- css 파일 -->
 	<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
+	<script type="text/javascript" src="/resource/js/login/login.js"></script>
 
 </head>
 <body>
@@ -45,16 +46,16 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>로그인</h3>
-                        <form action="#">
+                        <form name="frm" method="post" action="/member/loginSub.jsp">
                             <div class="input__item">
-                                <input type="text" placeholder="Email address">
+                                <input type="text" placeholder="Email address" name="userid">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password">
+                                <input type="text" placeholder="Password" name="pass">
                                 <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">로그인 하기</button>
+                            <button type="submit" class="site-btn" onclick="fn_submit(); return false;">로그인 하기</button>
                         </form>
                         <a href="#" class="forget_pass">비밀번호 찾기</a>
                     </div>
@@ -62,7 +63,7 @@
                 <div class="col-lg-6">
                     <div class="login__register">
                         <h3>아이디가 없으세요?</h3>
-                        <a href="./signup.html" class="primary-btn">회원가입</a>
+                        <a href="/member/register.jsp" class="primary-btn">회원가입</a>
                     </div>
                 </div>
             </div>
