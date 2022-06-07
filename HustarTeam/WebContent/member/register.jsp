@@ -65,7 +65,7 @@
                                 <span class="icon_profile"></span>
                             </div>
                            <div class="input__item">
-                                <input type="text" placeholder="성별" name="userGender">
+                                <input type="text" placeholder="성별1" name="userGender">
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
