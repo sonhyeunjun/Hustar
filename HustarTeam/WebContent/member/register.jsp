@@ -47,28 +47,49 @@
                 <div class="col-lg-6" style="margin:auto;" >
                     <div class="login__form">
                         <h3>회원가입</h3>
-                        <form name="frm" method="post" action="/member/registerSub.jsp">
-                            <div class="input__item">
-                                <input type="text" placeholder="이메일 입력" name="userid">
+                        <form name="f+++rm" method="post" action="/member/registerSub.jsp">
+                       			 <div class="input__item">
+                                <input type="text" placeholder="아이디" name="userID">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="비밀번호" name="pass">
+                                <input type="text" placeholder="이메일" name="userEmail">
+                                <span class="icon_mail"></span>
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="비밀번호" name="userPassword">
                                 <span class="icon_lock"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="이름" name="name">
+                                <input type="text" placeholder="이름" name="userName">
+                                <span class="icon_profile"></span>
+                            </div>
+                           <div class="input__item">
+                                <input type="text" placeholder="성별" name="userGender">
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="생일" name="brithday">
+                                <input type="date" data-placeholder="생년월일" name="userBirth">
                                 <span class="icon_calendar"></span>
                                 
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Phone number" name="phone">
+                                <input type="text" placeholder="대학교" name="userUniversity">
+                                <span class="icon_profile"></span>
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="전공" name="userMajor">
+                                <span class="icon_profile"></span>
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="전화번호" name="userPhone">
                                 <span class="icon_desktop"></span>
                             </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="주소" name="userAddress">
+                                <span class="icon_desktop"></span>
+                            </div>
+
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
