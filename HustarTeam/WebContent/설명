@@ -1,21 +1,14 @@
-index - ���� ������
-header - ��� �κ�
-header - footer �κ�
-loginSub - �α��� ����
-login- �α��� ������
-2022-06-07 
-<<<<<<< HEAD
-1. �ڹ� ��ũ��Ʈ �߰���
-�Ͽ���1
-������1
-�����
-������14
-=======
-1. �ڹ� ��ũ��Ʈ �߰���
-�Ͽ���1
-������1
-�����
-������1123
-아아아아아아아ㅏ
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
-ㅗㄴㅇ몬모오
+memeber ( 회원 폴더 )
+- login.jsp - java sub (로그인)
+- register.jsp ( 회원가입 )
+- registerModify.jsp ( 회원 수정 페이지 ) - 수정 / 탈퇴 버튼
+- mypage.jsp ( 마이페이지 ) 
+
+board ( 게시판 폴더 )
+- boardwrite ( 글 쓰기 )
+- board
+
+
+
+
+
