@@ -47,13 +47,9 @@
                 <div class="col-lg-6" style="margin:auto;" >
                     <div class="login__form">
                         <h3>회원가입</h3>
-                        <form name="f+++rm" method="post" action="/member/registerSub.jsp">
-                       			 <div class="input__item">
-                                <input type="text" placeholder="아이디1" name="userID">
-                                <span class="icon_mail"></span>
-                            </div>
-                            <div class="input__item">
-                                <input type="text" placeholder="이메일" name="userEmail">
+                        <form name="f+++rm" method="post" action="/member/registerAction.jsp">
+                       		<div class="input__item">
+                                <input type="text" placeholder="아이디" name="userID">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
@@ -64,14 +60,13 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
-                           <div class="input__item">
-                                <input type="text" placeholder="성별1" name="userGender">
-                                <span class="icon_profile"></span>
+                           	<div style="color:white;">
+                                남자<input type="radio" name="userGender" autocomplete="off" value="남자" checked>
+								여자<input type="radio" name="userGender" autocomplete="off" value="여자" checked>
                             </div>
                             <div class="input__item">
                                 <input type="date" data-placeholder="생년월일" name="userBirth">
                                 <span class="icon_calendar"></span>
-                                
                             </div>
                             <div class="input__item">
                                 <input type="text" placeholder="대학교" name="userUniversity">
@@ -86,13 +81,17 @@
                                 <span class="icon_desktop"></span>
                             </div>
                             <div class="input__item">
+                                <input type="email" placeholder="이메일" name="userEmail">
+                                <span class="icon_mail"></span>
+                            </div>
+                            <div class="input__item">
                                 <input type="text" placeholder="주소" name="userAddress">
                                 <span class="icon_desktop"></span>
                             </div>
 
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
+                                <label class="form-check-label" for="exampleCheck1" style="color:white;">서비스 약관의 모든 내용에 동의합니다.</label>
                             </div>
                             
                             <button type="submit" onclick="fn_submit(); return false;" class="site-btn" >회원가입</button> 

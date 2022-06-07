@@ -1,10 +1,20 @@
+#: 변경 내용
+
+#jdbc 교체(mysql-connector-java-3.0.17-ga-bin.jar => mariadb-java-client-2.4.0.jar)
+
+#user (유저DB)
+- User.java (유저DB 테이블)
+- UserDAO.java (로그인, 회원가입 DB 전달)
+
 memeber ( 회원 폴더 )
 - login.jsp - java sub (로그인)
+- #loginSub.jsp => loginAction.jsp (로그인 기능)
 - register.jsp ( 회원가입 )
-- registerModify.jsp ( 회원 수정 페이지 ) - 수정 / 탈퇴 버튼
-- mypage.jsp ( 마이페이지 ) 
+- #registerSub.jsp => registerAction.jsp (회원가입 기능)
+- [예정]registerModify.jsp ( 회원 수정 페이지 ) - 수정 / 탈퇴 버튼
+- [예정]mypage.jsp ( 마이페이지 ) 
 
-board ( 게시판 폴더 )
+[예정]board ( 게시판 폴더 )
 - boardwrite ( 글 쓰기 )
 - board
 
