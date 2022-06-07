@@ -49,7 +49,7 @@
                         <h3>회원가입</h3>
                         <form name="f+++rm" method="post" action="/member/registerSub.jsp">
                        			 <div class="input__item">
-                                <input type="text" placeholder="아이디1" name="userID">
+                                <input type="text" placeholder="아이디" name="userID">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
@@ -65,7 +65,7 @@
                                 <span class="icon_profile"></span>
                             </div>
                            <div class="input__item">
-                                <input type="text" placeholder="성별1" name="userGender">
+                                <input type="text" placeholder="성별" name="userGender">
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
