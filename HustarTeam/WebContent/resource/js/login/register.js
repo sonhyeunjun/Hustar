@@ -10,7 +10,7 @@ function fn_submit() {
 
 	if (userID.length < 4 || userID.length > 12) {
 		alert("아이디를 다시 입력해 주세요.");
-		document.frm.userid.focus();
+		document.frm.userID.focus();
 		return false;
 	}
 	if (document.frm.pass.value == "") {
