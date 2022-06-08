@@ -1,16 +1,16 @@
 function fn_submit() {
 
 
-	let userid = document.frm.userid.value;
-	let len = userid.length;
+	let userID = document.frm.userid.value;
+	let len = userID.length;
 	for (let i = 0; i < len; i++) {
 		// 치환 replace(old,new)
-		userid = userid.replace(" ", "");
+		userID = userID.replace(" ", "");
 	}
 
-	if (userid.length < 4 || userid.length > 12) {
+	if (userID.length < 4 || userID.length > 12) {
 		alert("아이디를 다시 입력해 주세요.");
-		document.frm.userid.focus();
+		document.frm.userID.focus();
 		return false;
 	}
 	if (document.frm.pass.value == "") {
