@@ -45,5 +45,6 @@
 			script.println("</script>");
 		}
 	%>
+	<!-- 1 -->
 </body>
 </html>
