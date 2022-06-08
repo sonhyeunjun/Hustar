@@ -60,6 +60,10 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="이름" name="userName">
+                                <span class="icon_profile"></span>
+                            </div>
                            	<div style="color:white;">
                                 남자<input type="radio" name="userGender" autocomplete="off" value="남자" checked>
 								여자<input type="radio" name="userGender" autocomplete="off" value="여자" checked>
