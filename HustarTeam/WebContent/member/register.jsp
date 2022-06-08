@@ -53,7 +53,7 @@
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="비밀번호" name="userPassword">
+                                <input type="password" placeholder="비밀번호" name="userPassword">
                                 <span class="icon_lock"></span>
                             </div>
                             <div class="input__item">
