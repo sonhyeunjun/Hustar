@@ -20,18 +20,6 @@
 
 </head>
 <body>
-	<%
-	String userID =null;
-	if(session.getAttribute("userID") != null){
-		userID = (String)session.getAttribute("userID");
-	}
-	if(userID != null){
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("location.href='mypage.jsp'");
-		script.println("</script>");
-	}
-	%>
 
 	<header>
 	<%@ include file="/include/header.jsp"%>
