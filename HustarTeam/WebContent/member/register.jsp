@@ -60,18 +60,6 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
-
-                            <div class="Checkbox">
-               				   <div class="btn-group" data-toggle="buttons">
-                   				  <label class="btn btn-primary active">
-                 			      <input type="radio" name="userGender" autocomplete="off" value="남자" checked/>남자 
-                  			   </label>
-                			     <label class="btn btn-primary">
-                   			     <input type="radio" name="userGender" autocomplete="off" value="여자" checked/>여자 
-                 			    </label>
-              				    </div>
-              				    </div>
-
                             <div class="input__item">
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
