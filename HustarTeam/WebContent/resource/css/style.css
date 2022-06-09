@@ -1,6 +1,3 @@
-@charset "UTF-8";
-
-
 /******************************************************************
   Theme Name: Anime
   Description: Anime video tamplate
@@ -148,6 +145,7 @@ ol {
 }
 
 .spad {
+	
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
@@ -247,7 +245,7 @@ ol {
 		-webkit-transform: rotate(0deg);
 		border: 4px solid #f44336;
 		border-left-color: transparent;
-		}
+	}
 	50% {
 		-webkit-transform: rotate(180deg);
 		border: 4px solid #673ab7;
@@ -1938,6 +1936,7 @@ ol {
 	background: #070720;
 	padding-top: 60px;
 	padding-bottom: 40px;
+	bottom: 0px;
 	position: relative;
 }
 
