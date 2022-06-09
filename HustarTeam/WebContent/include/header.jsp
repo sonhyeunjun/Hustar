@@ -69,8 +69,8 @@
 					<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
-						<a href="./login.html" class="icon_lock-open"><span></span></a>
-                        <a href="./login.html">사람님<span class="icon_profile"></span></a>
+						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="/member/login.jsp">사람님<span class="icon_profile"></span></a>	
 					</div>
 				</div>
 				<% 	
