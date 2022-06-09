@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/Ca.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="/resource/img/Ca.jpg">
                                         <!-- <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div> -->
@@ -67,13 +67,13 @@
                             </div>
                             <div class="col-6 col-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/Ca.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="/resource/img/Ca.jpg">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 col-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/Ca.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="/resource/img/Ca.jpg">
                                     </div>
                                 </div>
                             </div>
