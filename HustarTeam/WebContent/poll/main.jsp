@@ -26,18 +26,95 @@
 	
 	<!-- 내용  -->
 	
-        <h3 style="color:white;">[설문조사페이지]</h3>
-	<br/>
-	<h3>${dto.question}</h3>
-	<form action="${path}/survey_servlet/insert.do" method=="post">
-		<input type="radio" name="num" value="1" checked> ${dto.ans1} <br/>
-		<input type="radio" name="num" value="2" > ${dto.ans2} <br/>
-		<input type="radio" name="num" value="3" > ${dto.ans3} <br/>
-		<input type="radio" name="num" value="4" > ${dto.ans4} <br/>
-		<input type="hidden" name="survey_num" value="${dto.survey_num}" checked>
-		<input type="submit" value="투표">
-	</form>
-
+        <h3 style="color:white; text-align: center;" >[설문조사]</h3>
+	<br />
+		
+		<span style="color: #005766;">"원하시는 질문"</span> <span style="color: #99004C;">"항목"</span>
+		<span style="color: yellow;">"시간"</span><span style="color: white; text-align: center;">을 선택해주세요</h3>
+		<hr width="600" />
+	<form name="frm" method="post" action="pollInsertProc.jsp">
+		<!-- 투표처리기능 pollInsertProc.jsp-->
+			<table border="1" width="1000" hight="700" style="color:white;" >
+				<tr>
+					<td style= "background-color:#005766; color: #FFFFFF; 
+					font-size:18; text-align: center;"><b>질문</b></td>
+					<td colspan="2"><input name="question" size="54"></td>
+				</tr>
+				<tr>
+					<td style= "background-color: #99004C; color: #FFFFFF;
+					font-size:18; text-align: center; "rowspan="30" >
+					<b>항목</b></td>
+					<%
+						for (int i = 1; i <= 4; i++) {
+							out.println("<td>" + (i * 2 - 1)
+									+ ": <input name='item'></td>");
+							out.println("<td>" + (i * 2)
+									+ ": <input name='item'></td>");
+							out.println("</tr>");
+							if (i == 9) {
+								out.println("");
+							} else {
+								out.println("<tr>");
+							}
+						}//for end
+					%>
+				<tr>
+					<td style="text-align: center;">투표 시작일</td>
+					<td colspan="2"><select name="sdateY">
+							<option value="2019">2019
+							<option value="2020">2020
+					</select>년 <select name="sdateM">
+							<%
+								for (int i = 1; i <= 12; i++) {
+									out.println("<option value='" + i + "'>" + i);
+								}
+							%>
+					</select>월 <select name="sdateD">
+							<%
+								for (int i = 1; i <= 31; i++) {
+									out.println("<option value='" + i + "'>" + i);
+								}
+							%>
+					</select>일</td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">투표 마감일</td>
+					<td colspan=2><select name="edateY">
+							<option value="2019">2019
+							<option value="2020">2020
+					</select>년 <select name="edateM">
+							<%
+								for (int i = 1; i <= 12; i++) {
+									out.println("<option value='" + i + "'>" + i);
+								}
+							%>
+					</select>월 <select name="edateD">
+							<%
+								for (int i = 1; i <= 31; i++) {
+									out.println("<option value='" + i + "'>" + i);
+								}
+							%>
+					</select>일</td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">복수투표</td>
+					<td colspan=2>
+						<input type="radio" name="type" value="1" checked>네 
+						<input type="radio" name="type" value="0">아니요
+					</td>
+				</tr>
+				<tr>
+					<td colspan=3>
+						<input type="button" value="작성하기" onclick="send()"> 
+						<input type="reset" value="다시쓰기"> 
+						<input type="button" value="리스트" 
+                         onClick="javascript:location.href='pollList.jsp'">
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="sdate">
+			<input type="hidden" name="edate">
+		</form>
 	
 
 
