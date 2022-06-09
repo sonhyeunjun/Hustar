@@ -20,10 +20,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
+
 
 	<header>
 	<%@ include file="/include/header.jsp"%>
