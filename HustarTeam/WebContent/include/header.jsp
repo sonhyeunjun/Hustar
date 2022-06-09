@@ -70,7 +70,7 @@
 					<div class="header__right">
 						<!-- 검색하기 -->
 						<a href="#" class="search-switch"><span class="icon_lock-open"></span></a>
-                        <a href="/member/login.jsp">사람님<span class="icon_profile"></span></a>	
+                        <a href="/member/login.jsp">닉네임<span class="icon_profile"></span></a>	
 					</div>
 				</div>
 				<% 	
