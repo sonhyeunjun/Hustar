@@ -36,7 +36,7 @@
 						<nav class="header__menu mobile-menu">
 							<ul>
 								<li class="active"><a href="./index.html">공지사항</a></li>
-								<li><a href="./categories.html">설문조사</a></li>
+								<li><a href="/poll/main.jsp">설문조사</a></li>
 								<li><a href="./blog.html">과제제출</a></li>
 								<li><a href="#">출결확인</a></li>
 							</ul>
