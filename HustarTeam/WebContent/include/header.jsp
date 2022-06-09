@@ -54,6 +54,7 @@
 			<!-- 반응형 nav -->
 			<div id="mobile-menu-wrap"></div>
 		</div>
+		</header>
 
 </body>
 </html>
