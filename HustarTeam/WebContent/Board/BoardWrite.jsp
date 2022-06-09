@@ -27,7 +27,7 @@
 		
 	
 	<!-- 내용  -->
-	공지사항 페이지입니다
+	<p style="color:white;">공지사항 페이지입니다</p>
 
 	<!-- footer 바닥글-->
 	<%@ include file="/include/footer.jsp"%>

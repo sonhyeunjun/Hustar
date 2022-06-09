@@ -147,6 +147,7 @@
           </div>
         </div>
       </section>
+      
 	<!-- footer 1바닥글-->
 	<%@ include file="/include/footer.jsp"%>
 
