@@ -25,12 +25,10 @@
 	<script type="text/javascript" src="/resource/js/login/register.js"></script>
 
 </head>
-<body>
-
-	<header>
+<body>	
+<header>
 	<%@ include file="/include/header.jsp"%>
-	</header>
-	
+</header>
 	<!-- 내용  -->
 	<section class="normal-breadcrumb set-bg" data-setbg="/resource/img/mvimg01.jpg">
         <div class="container">
