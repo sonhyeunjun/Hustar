@@ -35,7 +35,7 @@
 		<hr width="600" />
 	<form name="frm" method="post" action="pollInsertProc.jsp">
 		<!-- 투표처리기능 pollInsertProc.jsp-->
-			<table border="1" width="500" hight="400">
+			<table border="1" width="1000" hight="700" style="color:white;">
 				<tr>
 					<td style= "background-color:#005766; color: #FFFFFF; 
 					font-size:18; text-align: center;"><b>질문</b></td>
