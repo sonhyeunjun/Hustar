@@ -26,16 +26,15 @@
 	
 	<!-- 내용  -->
 	
-        <h3 style="color:white;">[설문조사]</h3>
+        <h3 style="color:white; text-align: center;" >[설문조사]</h3>
 	<br />
 		
-		<span style="color: #005766;">"원하시는 질문"</span>과 
-		<span style="color: #99004C;">"항목"</span> <br/>
-		그리고 <span style="color: #99004C;">"시간"</span> <br/>을 선택해주세요</h3>
+		<span style="color: #005766;">"원하시는 질문"</span> <span style="color: #99004C;">"항목"</span>
+		<span style="color: yellow;">"시간"</span><span style="color: white; text-align: center;">을 선택해주세요</h3>
 		<hr width="600" />
 	<form name="frm" method="post" action="pollInsertProc.jsp">
 		<!-- 투표처리기능 pollInsertProc.jsp-->
-			<table border="1" width="1000" hight="700" style="color:white;">
+			<table border="1" width="1000" hight="700" style="color:white;" >
 				<tr>
 					<td style= "background-color:#005766; color: #FFFFFF; 
 					font-size:18; text-align: center;"><b>질문</b></td>
