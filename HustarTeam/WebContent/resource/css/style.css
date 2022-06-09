@@ -2030,6 +2030,8 @@ ol {
 	.hero {
 		overflow: hidden;
 	}
+	
+	
 }
 
 @media only screen and (min-width: 1200px) {
@@ -2058,6 +2060,7 @@ ol {
 	width:380px;
 	}
 	
+	
 }
 
 /* Tablet Device = 768px */
@@ -2078,6 +2081,13 @@ ol {
 		top: -42px;
 		padding: 0;
 	}
+	.social_youtube {
+		position: absolute;
+		right: 120px;
+		top: -100px;
+		padding: 0;
+	}
+	
 	.header__menu {
 		display: none;
 	}
@@ -2217,6 +2227,12 @@ ol {
 		position: absolute;
 		right: 0;
 		top: 13px;
+	}
+	.social_youtube {
+		position: absolute;
+		right: 120px;
+		top: -100px;
+		padding: 0;
 	}
 	.slicknav_nav .slicknav_arrow {
 		color: #111111;
