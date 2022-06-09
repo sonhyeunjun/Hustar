@@ -26,7 +26,7 @@
 	
 	<!-- 내용  -->
 	
-        <h3>[설문조사]</h3>
+        <h3 style="color:white;">[설문조사페이지]</h3>
 	<br/>
 	<h3>${dto.question}</h3>
 	<form action="${path}/survey_servlet/insert.do" method=="post">

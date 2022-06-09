@@ -27,50 +27,7 @@
 		
 	
 	<!-- 내용  -->
-	<section class="normal-breadcrumb set-bg" data-setbg="/resource/img/mvimg01.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="normal__breadcrumb__text">
-                        <h2>Login</h2>
-                        <p>Welcome to Hustar</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="login spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>로그인</h3>
-                        <form name="frm" method="post" action="/member/loginSub.jsp">
-                            <div class="input__item">
-                                <input type="text" placeholder="Email address" name="userid">
-                                <span class="icon_mail"></span>
-                            </div>
-                            <div class="input__item">
-                                <input type="text" placeholder="Password" name="pass">
-                                <span class="icon_lock"></span>
-                            </div>
-                            <button type="submit" class="site-btn" onclick="fn_submit(); return false;">로그인 하기</button>
-                        </form>
-                        <a href="#" class="forget_pass">비밀번호 찾기</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="login__register">
-                        <h3>아이디가 없으세요?</h3>
-                        <a href="/member/register.jsp" class="primary-btn">회원가입</a>
-                    </div>
-                </div>
-            </div>
-         
-        </div>
-    </section>
-
+	공지사항 페이지입니다
 
 	<!-- footer 바닥글-->
 	<%@ include file="/include/footer.jsp"%>
