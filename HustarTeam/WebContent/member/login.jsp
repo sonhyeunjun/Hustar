@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,13 +14,24 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
 	<!-- css 파일 -->
 	<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
 	<script type="text/javascript" src="/resource/js/login/login.js"></script>
 
 </head>
 <body>
+	<%
+	String userID =null;
+	if(session.getAttribute("userID") != null){
+		userID = (String)session.getAttribute("userID");
+	}
+	if(userID != null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("location.href='mypage.jsp'");
+		script.println("</script>");
+	}
+	%>
 
 	<header>
 	<%@ include file="/include/header.jsp"%>

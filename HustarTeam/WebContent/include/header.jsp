@@ -1,21 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<!-- css 파일 -->
-	<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet">
+<!-- css 파일 -->
+<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
 
 </head>
 <body>
-
-<!-- 화면 Loader 띄우기 -->
+	<%
+	String userID = null;
+	if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+	}
+	%>
+	<!-- 화면 Loader 띄우기 -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
@@ -26,8 +35,8 @@
 			<div class="row">
 				<div class="col-lg-2">
 					<div class="header__logo">
-						<a href="/"> <img
-							src="/resource/img/logo_w.png" alt="" width="100">
+						<a href="/"> <img src="/resource/img/logo_w.png" alt=""
+							width="100">
 						</a>
 					</div>
 				</div>
@@ -43,17 +52,35 @@
 						</nav>
 					</div>
 				</div>
+				
+				<%
+					if(userID == null){
+				%>
 				<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
 						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-						<a href="/member/login.jsp"><span class="icon_profile"></span></a>
+						<a href="/member/login.jsp"><span>로그인</span></a> <a
+							href="/member/register.jsp"><span>회원가입</span></a>
 					</div>
 				</div>
+				<%
+					}else{
+				%>
+					<div class="col-lg-2">
+					<div class="header__right">
+						<!-- 검색하기 -->
+						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+						<a href="/member/mypage.jsp"><span>마이페이지</span></a> <a
+							href="/member/logoutAction.jsp"><span>로그아웃</span></a>
+					</div>
+				</div>
+				<% 	
+					}
+				%>
 			</div>
 			<!-- 반응형 nav -->
 			<div id="mobile-menu-wrap"></div>
 		</div>
-
 </body>
 </html>
