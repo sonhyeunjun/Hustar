@@ -29,7 +29,7 @@
                         <li class="active"><a href="/Board/BoardWrite.jsp">공지사항</a></li>
 								<li><a href="/poll/main.jsp">설문조사</a></li>
 								<li><a href="/Howework/HWrite.jsp">과제제출</a></li>
-								<li><a href="#">출결확인1</a></li>
+								<li><a href="#">출결확인</a></li>
                     </ul>
                 </div>
             </div>
