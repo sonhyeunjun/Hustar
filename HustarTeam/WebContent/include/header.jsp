@@ -60,8 +60,7 @@
 					<div class="header__right">
 						<!-- 검색하기 -->
 						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-						<a href="/member/login.jsp"><span>로그인</span></a> <a
-							href="/member/register.jsp"><span>회원가입</span></a>
+                        <a href="/member/login.jsp">사람님<span class="icon_profile"></span></a>	
 					</div>
 				</div>
 				<%
@@ -70,9 +69,8 @@
 					<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
-						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-						<a href="/member/mypage.jsp"><span>마이페이지</span></a> <a
-							href="/member/logoutAction.jsp"><span>로그아웃</span></a>
+						<a href="./login.html" class="icon_lock-open"><span></span></a>
+                        <a href="./login.html">사람님<span class="icon_profile"></span></a>
 					</div>
 				</div>
 				<% 	

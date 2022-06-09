@@ -32,7 +32,13 @@
 	<header>
 		<%@ include file="/include/header.jsp"%>
 	</header>
-	<h1>마이페이지</h1>
+	<h1 style="color:white;">마이페이지</h1>
+	<form method="post" action="/member/userInfo_mypage.jsp">
+		<button type="submit" class="site-btn" onclick="fn_submit(); return false;">회원정보 조회</button>
+    </form>
+    <form method="post" action="/member/userUpdate.jsp">
+		<button type="submit" class="site-btn" onclick="fn_submit(); return false;">회원정보 수정</button>
+    </form>
 
 
 </body>
