@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="user.UserDAO" %>
-<%@ page import="user.User" %>
-
-<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="user.User"%>
+<%@ page import="user.UserDAO"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <!DOCTYPE html>
@@ -57,7 +56,7 @@
                       <div class="row">
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                            <input type="text" id="form3Example1m" class="form-control form-control-lg" name="userID" value=<%=userID %> />
+                            <input type="text" id="form3Example1m" class="form-control form-control-lg" name="userID" value=<%=userID%> />
                             <label class="form-label" for="form3Example1m">아이디</label>
                           </div>
                         </div>
