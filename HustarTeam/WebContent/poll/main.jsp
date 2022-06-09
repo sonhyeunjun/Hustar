@@ -8,6 +8,17 @@
 <meta name="keywords" content="Anime, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<form name="frm" method="post" action="pollInsertProc.jsp">
+<script type="text/javascript">
+	function send() {
+		f = document.frm;
+		f.sdate.value = f.sdateY.value+"-"
+		+ f.sdateM.value+"-"+f.sdateD.value;
+		f.edate.value = f.edateY.value+"-"
+		+ f.edateM.value+"-"+f.edateD.value;
+		f.submit();
+	}
+</script>
 <title>Hustar | Template</title>
 
 	<!-- Google Font -->
