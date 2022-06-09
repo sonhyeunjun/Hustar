@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login__form">
-                        <h3>로그인</h3>
+                        <h3>로그인1</h3>
                         <form name="frm" method="post" action="/member/loginSub.jsp">
                             <div class="input__item">
                                 <input type="text" placeholder="Email address" name="userid">
