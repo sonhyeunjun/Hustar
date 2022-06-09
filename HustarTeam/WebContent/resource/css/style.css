@@ -194,6 +194,8 @@ ol {
 	padding: 12px 30px;
 }
 
+
+
 /* Preloder */
 
 #preloder {
@@ -1771,19 +1773,28 @@ ol {
 	padding-left: 76px;
 }
 
-.login__form .Checkbox {
-    height: 50px;
+
+.login__form .checkbox {
+	height: 50px;
 	width: 100%;
 	font-size: 15px;
 	color: #b7b7b7;
 	background: #ffffff;
 	border: none;
-	padding-left: 76px;
+	padding: 15px 15px;
+	margin-bottom: 20px;
 }
 
-.login__form .Checkbox .btn-group {
-    display: block;
-    background-color: #fff;
+.checkbox input {
+	width: 200px;
+}
+
+.btn-group1 {
+	padding-right: 50px;
+}
+
+.login__form .btn-group {
+
 }
 
 .login__form form .input__item input::-webkit-input-placeholder {
@@ -2043,6 +2054,7 @@ ol {
 	.blog__item__text {
 		padding: 0 50px;
 	}
+	
 }
 
 /* Tablet Device = 768px */

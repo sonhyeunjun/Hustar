@@ -41,6 +41,9 @@
     </section>  
 
 
+    <!-- Normal Breadcrumb End -->
+
+    <!-- Signup Section Begin -->
     <section class="signup spad">
         <div class="container">
             <div class="row">
@@ -49,7 +52,7 @@
                         <h3>회원가입</h3>
                         <form name="f+++rm" method="post" action="/member/registerAction.jsp">
                        			 <div class="input__item">
-                                <input type="text" placeholder="아이디" name="userID">
+                                <input type="text" placeholder="아이디1" name="userID">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
@@ -64,16 +67,16 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
-                            <div class="Checkbox">
-               				   <div class="btn-group" data-toggle="buttons">
-                   				  <label class="btn btn-primary active">
-                 			      <input type="radio" name="userGender" autocomplete="off" value="남자" checked/>남자 
-                  			   </label>
-                			     <label class="btn btn-primary">
-                   			     <input type="radio" name="userGender" autocomplete="off" value="여자" checked/>여자 
-                 			    </label>
-              				    </div>
-              				    </div>
+                            <div class="checkbox">
+                                <div class="btn-group">
+                                <div class="btn-group1">
+                                <input type="radio" name="userGender" value="man">남자
+                            </div>
+                            <div class="btn-group2">
+                                <input type="radio" name="userGender" value="woman">여자
+                            </div>
+                            </div>
+                            </div>
           	                  <div class="input__item">
                                 <input type="date" data-placeholder="생년월일" name="userBirth">
                                 <span class="icon_calendar"></span>
@@ -108,7 +111,6 @@
             </div>
         </div>
     </section>
-
 	<!-- footer 1바닥글-->
 	<%@ include file="/include/footer.jsp"%>
 
