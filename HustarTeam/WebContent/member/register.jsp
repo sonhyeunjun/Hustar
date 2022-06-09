@@ -109,7 +109,7 @@
         </div>
     </section>
 
-	<!-- footer 바닥글-->
+	<!-- footer 1바닥글-->
 	<%@ include file="/include/footer.jsp"%>
 
 	<!-- 검색 -->
