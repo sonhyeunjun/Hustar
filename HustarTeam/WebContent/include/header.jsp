@@ -71,7 +71,7 @@
 					<div class="header__right">
 						<!-- 검색하기 -->
 						<a href="/member/logoutAction.jsp"><span class="icon_lock-open"></span></a>
-                        <a href="/member/login.jsp"><%=userID %>님<span class="icon_profile"></span></a>	
+                        <a href="/member/mypage.jsp"><%=userID %>님<span class="icon_profile"></span></a>	
                         
 					</div>
 				</div>
