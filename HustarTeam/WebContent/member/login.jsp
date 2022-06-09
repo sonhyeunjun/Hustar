@@ -46,13 +46,13 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>로그인</h3>
-                        <form name="frm" method="post" action="/member/loginSub.jsp">
+                        <form name="frm" method="post" action="/member/loginAction.jsp">
                             <div class="input__item">
-                                <input type="text" placeholder="Email address" name="userid">
+                                <input type="text" placeholder="Email address" name="userID">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password" name="pass">
+                                <input type="text" placeholder="Password" name="userPassword">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn" onclick="fn_submit(); return false;">로그인 하기</button>
