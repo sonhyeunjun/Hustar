@@ -1762,6 +1762,7 @@ ol {
 	content: "";
 }
 
+
 .login__form form .input__item input {
 	height: 50px;
 	width: 100%;
@@ -1770,6 +1771,21 @@ ol {
 	background: #ffffff;
 	border: none;
 	padding-left: 76px;
+}
+
+.login__form .Checkbox {
+    height: 50px;
+	width: 100%;
+	font-size: 15px;
+	color: #b7b7b7;
+	background: #ffffff;
+	border: none;
+	padding-left: 76px;
+}
+
+.login__form .Checkbox .btn-group {
+    display: block;
+    background-color: #fff;
 }
 
 .login__form form .input__item input::-webkit-input-placeholder {

@@ -64,11 +64,17 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
-                           <div class="input__item">
-                                <input type="text" placeholder="성별1" name="userGender">
-                                <span class="icon_profile"></span>
-                            </div>
-                            <div class="input__item">
+                            <div class="Checkbox">
+               				   <div class="btn-group" data-toggle="buttons">
+                   				  <label class="btn btn-primary active">
+                 			      <input type="radio" name="userGender" autocomplete="off" value="남자" checked/>남자 
+                  			   </label>
+                			     <label class="btn btn-primary">
+                   			     <input type="radio" name="userGender" autocomplete="off" value="여자" checked/>여자 
+                 			    </label>
+              				    </div>
+              				    </div>
+          	                  <div class="input__item">
                                 <input type="date" data-placeholder="생년월일" name="userBirth">
                                 <span class="icon_calendar"></span>
                                 
@@ -89,7 +95,6 @@
                                 <input type="text" placeholder="주소" name="userAddress">
                                 <span class="icon_desktop"></span>
                             </div>
-
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
