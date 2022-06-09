@@ -47,7 +47,7 @@
                 <div class="col-lg-6" style="margin:auto;" >
                     <div class="login__form">
                         <h3>회원가입</h3>
-                        <form name="f+++rm" method="post" action="/member/registerSub.jsp">
+                        <form name="f+++rm" method="post" action="/member/registerAction.jsp">
                        			 <div class="input__item">
                                 <input type="text" placeholder="아이디" name="userID">
                                 <span class="icon_mail"></span>
