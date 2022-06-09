@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
+                                <label class="form-check-label" style="color:white;" "for="exampleCheck1">서비스 약관의 모든 내용에 동의합니다.</label>
                             </div>
                             
                             <button type="submit" onclick="fn_submit(); return false;" class="site-btn" >회원가입</button> 
