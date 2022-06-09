@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                            <input type="text" id="form3Example1n" class="form-control form-control-lg" name="userName" value="<%= %>" />
+                            <input type="text" id="form3Example1n" class="form-control form-control-lg" name="userName" />
                             <label class="form-label" for="form3Example1n">이름</label>
                           </div>
                         </div>
