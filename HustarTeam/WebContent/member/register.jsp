@@ -60,7 +60,7 @@
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
                             </div>
-<<<<<<< HEAD
+
                             <div class="Checkbox">
                				   <div class="btn-group" data-toggle="buttons">
                    				  <label class="btn btn-primary active">
@@ -71,8 +71,7 @@
                  			    </label>
               				    </div>
               				    </div>
-          	                  <div class="input__item">
-=======
+
                             <div class="input__item">
                                 <input type="text" placeholder="이름" name="userName">
                                 <span class="icon_profile"></span>
@@ -82,7 +81,7 @@
 								여자<input type="radio" name="userGender" autocomplete="off" value="여자" checked>
                             </div>
                             <div class="input__item">
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
+
                                 <input type="date" data-placeholder="생년월일" name="userBirth">
                                 <span class="icon_calendar"></span>
                             </div>
