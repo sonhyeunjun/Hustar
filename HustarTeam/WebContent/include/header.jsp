@@ -61,6 +61,7 @@
 						<!-- 검색하기 -->
 						 <a href="https://www.youtube.com/channel/UCDnykcJVR0hIrG98YvF8lKg " target='_blank'><span class="social_youtube"></span></a>
                         <a href="/member/login.jsp"><span class="icon_profile"></span></a>	
+
 					</div>
 				</div>
 				<%
