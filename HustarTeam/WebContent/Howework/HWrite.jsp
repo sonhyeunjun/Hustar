@@ -13,8 +13,10 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	
 	<!-- css 파일 -->
 	<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
+	<script type="text/javascript" src="/resource/js/login/login.js"></script>
 
 </head>
 <body>
@@ -25,23 +27,15 @@
 		
 	
 	<!-- 내용  -->
-	
-    response.sendRedirect(
-			request.getContextPath() + "/survey_servlet/input.do");
-%>
-
-	
-
+	과제제출 페이지입니다
 
 	<!-- footer 바닥글-->
-
 	<%@ include file="/include/footer.jsp"%>
-
 
 
 	<!-- 검색 -->
 	<%@ include file="/include/search.jsp"%>
-
+	<!-- Search model end -->
 
 
 	<script src="/resource/js/jquery-3.3.1.min.js"></script>

@@ -18,13 +18,14 @@
 
 </head>
 <body>
+	
 
 	<header>
 	<%@ include file="/include/header.jsp"%>
 	</header>
 		
 	
-	<!-- 내용  -->
+	<!-- 내용1  -->
 	
         <div class="container">
             <div class="row">
