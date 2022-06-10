@@ -44,7 +44,7 @@
 				session.setAttribute("userID", user.getUserID());
 				script.println("<script>");
 				script.println("alert('회원가입이 완료되었습니다.')");
-				script.println("location.href='index.jsp'");
+				script.println("location.href='../index.jsp'");
 				script.println("</script>");
 			}
 		}

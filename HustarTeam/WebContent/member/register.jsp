@@ -52,7 +52,8 @@
                     <div class="card-body p-md-5 text-black">
                       <h3 class="mb-5 text-uppercase">회원가입</h3>
       
-                      <div class="row">
+      					<form method="post" action="/member/registerAction.jsp">
+                      	<div class="row">
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1m" class="form-control form-control-lg" name="userID" />
@@ -138,7 +139,7 @@
                       </div>
                       <button type="submit" onclick="fn_submit(); return false;" class="site-btn" >회원가입</button>
                       </div>
-      
+      				</form>
                     </div>
                   </div>
                 </div>
