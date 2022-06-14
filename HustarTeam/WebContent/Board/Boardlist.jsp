@@ -43,7 +43,7 @@
                     <div class="breadcrumb__links">
                         <a href="/"><i class="fa fa-home"></i>Home</a>
                         <a href="#">게시판</a>
-                        <span>여기는 "<%= %>"</span>
+                        <span>여기는 </span>
                     </div>
                 </div>
             </div>
