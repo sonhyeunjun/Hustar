@@ -114,7 +114,7 @@
                                         </tbody>
                                     </table>
                                      <div class="product__pagination1" style="text-align: right;">
-                                        <button type="button" class="btn btn-light">글쓰기</button>
+                                        <button type="button" class="btn btn-light" onclick="location.href='/Board/BoardWrite.jsp'">글쓰기</button>
                                     </div>
                                     <div class="product__pagination" style="text-align:center">
                                         <a href="#" >1</a>
