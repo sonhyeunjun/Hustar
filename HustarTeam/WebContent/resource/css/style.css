@@ -108,6 +108,12 @@ ol {
 	margin: 0;
 }
 
+.ck.ck-editor {
+	max-width: 100%;
+}
+.ck-editor__editable {
+	min-height: 500px;
+}
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -1185,6 +1191,7 @@ ol {
 
 .anime__video__player {
 	margin-bottom: 70px;
+	/* height: 500px; */
 }
 
 .anime__video__player .plyr--video {
@@ -1354,7 +1361,16 @@ ol {
 	font-size: 24px;
 	margin-bottom: 0;
 }
-
+.section-title h4,
+.section-title h5 {
+	color: #ffffff;
+	font-weight: 600;
+	line-height: 21px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	position: relative;
+	font-family: "Oswald", sans-serif;
+}
 /*---------------------
     Blog
 -----------------------*/
@@ -1411,6 +1427,21 @@ ol {
 .blog__item__text h4 a {
 	color: #ffffff;
 	line-height: 34px;
+}
+
+/*---------------------
+Board Write
+-----------------------*/
+.board__details__form form input {
+	height: 50px;
+	width: 100%;
+	background: #ffffff;
+	font-size: 15px;
+	color: #a6a6a6;
+	padding-left: 20px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 30px;
 }
 
 /*---------------------
