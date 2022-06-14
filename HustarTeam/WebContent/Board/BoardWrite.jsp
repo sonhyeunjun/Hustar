@@ -43,7 +43,7 @@
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i>Home</a>
                         <a href="./categories.html">게시판</a>
-                        <span>공지사항</span>
+                        <span>여기는 "<%= %>"</span>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                                         </thead>
                                         <tbody class="table-light">
                                             <tr>
-                                                <td>Tiger Nixon</td>
+                                                 <td><a href="Boarddetail.jsp">Tiger Nixon</a></td>
                                                 <td>System Architect</td>
                                                 <td>Edinburgh</td>
                                                 <td>61</td>
@@ -133,49 +133,14 @@
     </div>
 </section>
 
-<footer class="footer">
-    <div class="page-up">
-        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo_w.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="footer__nav">
-                    <ul>
-                        <li class="active"><a href="./index.html">Homepage</a></li>
-                        <li><a href="./categories.html">공지사항</a></li>
-                        <li><a href="./blog.html">과제제출</a></li>
-                        <li><a href="#">출결관리</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Hustar  by <a href="#" target="_blank">hello</a>
-                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	<!-- footer 바닥글-->
+	<%@ include file="/include/footer.jsp"%>
 
-              </div>
-          </div>
-      </div>
-  </footer>
-  <!-- Footer Section End -->
 
-  <!-- Search model Begin -->
-  <!-- play.js에 검색 -->
-  <div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch"><i class="icon_close"></i></div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
-        </form>
-    </div>
-</div>
-<!-- Search model end -->
+	<!-- 검색 -->
+	<%@ include file="/include/search.jsp"%>
+	<!-- Search model end -->
+
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>

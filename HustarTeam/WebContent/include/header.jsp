@@ -47,10 +47,9 @@
 								<li class="active"><a href="/">메인화면</a></li>
 								 <li><a href="/Board/BoardWrite.jsp">공지사항 <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="/Board/BoardWrite.jsp">공지사항</a></li>
-                                        <li><a href="./anime-details.html">자유게시판</a></li>
-                                        <li><a href="./anime-watching.html">일반게시판</a></li>
-                                        <li><a href="./blog-details.html">자유게시판</a></li>
+                                        <li><a href="#">자유게시판</a></li>
+                                        <li><a href="#">일반게시판</a></li>
+                                        <li><a href="#">자유게시판</a></li>
                                     </ul>
                                 </li>
 								<li><a href="/Howework/HWrite.jsp">과제제출</a></li>
