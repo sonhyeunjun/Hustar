@@ -44,8 +44,15 @@
 					<div class="header__nav">
 						<nav class="header__menu mobile-menu">
 							<ul>
-								<li class="active"><a href="/Board/BoardWrite.jsp">공지사항</a></li>
-								<li><a href="/poll/main.jsp">설문조사</a></li>
+								<li class="active"><a href="/">메인화면</a></li>
+								 <li><a href="/Board/BoardWrite.jsp">공지사항 <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="/Board/BoardWrite.jsp">공지사항</a></li>
+                                        <li><a href="./anime-details.html">자유게시판</a></li>
+                                        <li><a href="./anime-watching.html">일반게시판</a></li>
+                                        <li><a href="./blog-details.html">자유게시판</a></li>
+                                    </ul>
+                                </li>
 								<li><a href="/Howework/HWrite.jsp">과제제출</a></li>
 								<li><a href="#">출결확인</a></li>
 							</ul>
