@@ -45,7 +45,7 @@
 						<nav class="header__menu mobile-menu">
 							<ul>
 								<li class="active"><a href="/">메인화면</a></li>
-								 <li><a href="/Board/BoardWrite.jsp">공지사항 <span class="arrow_carrot-down"></span></a>
+								 <li><a href="/Board/BoardWrite.jsp">공지사항<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="#">자유게시판</a></li>
                                         <li><a href="#">일반게시판</a></li>

@@ -31,24 +31,25 @@
     
 
 <!-- Header Section Begin -->
-<header>
+	<header>
 	<%@ include file="/include/header.jsp"%>
 	</header>
-    <!-- Header End -->
+
 
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i>Home</a>
-                        <a href="./categories.html">게시판</a>
+                        <a href="/"><i class="fa fa-home"></i>Home</a>
+                        <a href="#">게시판</a>
                         <span>여기는 "<%= %>"</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+  
     <section class="product-page spad">
         <div class="container">
             <div class="row">
