@@ -41,8 +41,11 @@
     </section>  
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
     <section class="h-90 bg-black">
         <div class="container py-9 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -53,8 +56,13 @@
                     <div class="card-body p-md-5 text-black">
                       <h3 class="mb-5 text-uppercase">회원가입</h3>
       
+<<<<<<< HEAD
       				<form method="post" action="/member/registerAction.jsp">
                       <div class="row">
+=======
+      					<form method="post" action="/member/registerAction.jsp">
+                      	<div class="row">
+>>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
                             <input type="text" id="form3Example1m" class="form-control form-control-lg" name="userID" />
@@ -109,6 +117,11 @@
                       
                       <div class="row">
                       
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
                     </div>
 
                       <div class="form-outline mb-4">
@@ -148,6 +161,7 @@
           </div>
         </div>
       </section>
+      
 	<!-- footer 1바닥글-->
 	<%@ include file="/include/footer.jsp"%>
 
