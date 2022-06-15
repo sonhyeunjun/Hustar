@@ -24,11 +24,11 @@
 		userID = (String) session.getAttribute("userID");
 	}
 	%>
-	<!-- 화면 Loader 띄우기 -->
+	<!-- 화면 Loader 띄우기
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
+ -->
 	<!-- header -->
 	<header class="header">
 		<div class="container">
@@ -60,7 +60,8 @@
 					<div class="header__right">
 						<!-- 검색하기 -->
 						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="/member/login.jsp">사람님<span class="icon_profile"></span></a>	
+                        <a href="/member/login.jsp">로그인<span class="icon_profile"></span></a>	
+                        <a href="/member/register.jsp">회원가입<span></span></a>	
 					</div>
 				</div>
 				<%
@@ -69,8 +70,8 @@
 					<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
-						<a href="./login.html" class="icon_lock-open"><span></span></a>
-                        <a href="./login.html">사람님<span class="icon_profile"></span></a>
+						<a href="/member/login.jsp" class="icon_lock-open"><span></span></a>
+                        <a href="./member/mypage.jsp">사람님<span class="icon_profile"></span></a>
 					</div>
 				</div>
 				<% 	
