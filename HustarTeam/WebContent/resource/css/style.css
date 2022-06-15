@@ -108,12 +108,7 @@ ol {
 	margin: 0;
 }
 
-.ck.ck-editor {
-	max-width: 100%;
-}
-.ck-editor__editable {
-	min-height: 500px;
-}
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -152,7 +147,7 @@ ol {
 
 .spad {
 	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 170px;
 }
 
 .text-white h1,
