@@ -653,9 +653,13 @@ ol {
 }
 
 .product__item__pic {
-	height: 400px;
+	height: 500px;
 	position: relative;
 	border-radius: 5px;
+}
+
+.ck-editor__editable_inline {
+    min-height: 400px !important;
 }
 
 .product__item__pic .ep {

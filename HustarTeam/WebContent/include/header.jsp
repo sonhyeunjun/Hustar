@@ -65,15 +65,15 @@
 				<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
-<<<<<<< HEAD
+
 						<a href="#" class="search-switch"><span class="icon_search"></span></a>
                         <a href="/member/login.jsp">로그인<span class="icon_profile"></span></a>	
                         <a href="/member/register.jsp">회원가입<span></span></a>	
-=======
+
 						 <a href="https://www.youtube.com/channel/UCDnykcJVR0hIrG98YvF8lKg " target='_blank'><span class="social_youtube"></span></a>
                         <a href="/member/login.jsp"><span class="icon_profile"></span></a>	
 
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
+
 					</div>
 				</div>
 				<%
@@ -82,14 +82,14 @@
 					<div class="col-lg-2">
 					<div class="header__right">
 						<!-- 검색하기 -->
-<<<<<<< HEAD
+
 						<a href="/member/login.jsp" class="icon_lock-open"><span></span></a>
                         <a href="./member/mypage.jsp">사람님<span class="icon_profile"></span></a>
-=======
+
 						<a href="/member/logoutAction.jsp"><span class="icon_lock-open"></span></a>
                         <a href="/member/mypage.jsp"><%=userID %>님<span class="icon_profile"></span></a>	
                         
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
+
 					</div>
 				</div>
 				<% 	
