@@ -13,10 +13,10 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mariadb://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 			String dbID = "root";
-			String dbPassword = "1234";
-			Class.forName("org.mariadb.jdbc.Driver");
+			String dbPassword = "Thsguswns";
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -124,4 +124,9 @@ public class UserDAO {
 		return -1;
 		
 	}
+	
+	public static void main(String[] args) {
+		UserDAO dao = new UserDAO();
+	}
+
 }
