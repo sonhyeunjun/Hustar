@@ -44,7 +44,7 @@
 					<div class="header__nav">
 						<nav class="header__menu mobile-menu">
 							<ul>
-								<li class="active"><a href="/Board/BoardWrite.jsp">공지사항</a></li>
+								<li class="active"><a href="/member/notice.jsp">공지사항</a></li>
 								<li><a href="/poll/main.jsp">설문조사</a></li>
 								<li><a href="/Howework/HWrite.jsp">과제제출</a></li>
 								<li><a href="#">출결확인</a></li>

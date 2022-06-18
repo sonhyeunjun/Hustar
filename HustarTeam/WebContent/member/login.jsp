@@ -21,9 +21,6 @@
 
 </head>
 <body>
-	<%
-	
-	%>
 
 	<header>
 	<%@ include file="/include/header.jsp"%>
