@@ -13,19 +13,18 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-
-	         String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
-	         String dbID = "root";
-	         String dbPassword = "Thsguswns";// 패스워드 이거맞나 ㅇㅇ
-	         Class.forName("com.mysql.cj.jdbc.Driver");
-	         conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-	      } catch(Exception e) {
-	         e.printStackTrace();
-	      } 
+			String dbURL = "jdbc:mariadb://localhost:3306/BBS";
+			String dbID = "root";
+			String dbPassword = "1234";
+			Class.forName("org.mariadb.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM user WHERE userID = ?";
+		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
@@ -49,7 +48,7 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		String SQL = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
