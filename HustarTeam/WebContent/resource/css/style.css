@@ -108,6 +108,7 @@ ol {
 	margin: 0;
 }
 
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -134,7 +135,7 @@ ol {
 	top: -6px;
 	height: 32px;
 	width: 4px;
-	background: #e53637;
+	background: white;
 	content: "";
 }
 
@@ -145,9 +146,8 @@ ol {
 }
 
 .spad {
-	
 	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 170px;
 }
 
 .text-white h1,
@@ -633,7 +633,7 @@ ol {
 
 .btn__all {
 	text-align: right;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .trending__product {
@@ -653,9 +653,13 @@ ol {
 }
 
 .product__item__pic {
-	height: 325px;
+	height: 500px;
 	position: relative;
 	border-radius: 5px;
+}
+
+.ck-editor__editable_inline {
+    min-height: 400px !important;
 }
 
 .product__item__pic .ep {
@@ -862,7 +866,7 @@ ol {
 }
 
 .product__page__title {
-	border-bottom: 0px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 	padding-bottom: 10px;
 	margin-bottom: 30px;
 }
@@ -910,7 +914,7 @@ ol {
 }
 
 .product__pagination {
-	padding-top: 15px;
+	padding-top: 30px;
 }
 
 .product__pagination a {
@@ -1062,7 +1066,8 @@ ol {
 	display: inline-block;
 }
 
-.anime__details__btn .follow-btn {
+/* 일단 버튼 수정 */
+/* .anime__details__btn .follow-btn {
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1073,9 +1078,9 @@ ol {
 	padding: 14px 20px;
 	border-radius: 4px;
 	margin-right: 11px;
-}
+} */
 
-.anime__details__btn .watch-btn span {
+/* .anime__details__btn .watch-btn span {
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1095,9 +1100,9 @@ ol {
 	padding: 11px 5px 16px 8px;
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
-}
+} */
 
-.anime__details__review {
+.review {
 	margin-bottom: 55px;
 }
 
@@ -1185,6 +1190,7 @@ ol {
 
 .anime__video__player {
 	margin-bottom: 70px;
+	/* height: 500px; */
 }
 
 .anime__video__player .plyr--video {
@@ -1314,7 +1320,7 @@ ol {
 	position: absolute;
 	right: -14px;
 	top: 0;
-	content: " ";
+	content: "";
 	font-family: "FontAwesome";
 }
 
@@ -1354,7 +1360,16 @@ ol {
 	font-size: 24px;
 	margin-bottom: 0;
 }
-
+.section-title h4,
+.section-title h5 {
+	color: #ffffff;
+	font-weight: 600;
+	line-height: 21px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	position: relative;
+	font-family: "Oswald", sans-serif;
+}
 /*---------------------
     Blog
 -----------------------*/
@@ -1411,6 +1426,21 @@ ol {
 .blog__item__text h4 a {
 	color: #ffffff;
 	line-height: 34px;
+}
+
+/*---------------------
+Board Write
+-----------------------*/
+.board__details__form form input {
+	height: 50px;
+	width: 100%;
+	background: #ffffff;
+	font-size: 15px;
+	color: #a6a6a6;
+	padding-left: 20px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 30px;
 }
 
 /*---------------------
@@ -1760,7 +1790,6 @@ ol {
 	content: "";
 }
 
-
 .login__form form .input__item input {
 	height: 50px;
 	width: 100%;
@@ -1769,21 +1798,6 @@ ol {
 	background: #ffffff;
 	border: none;
 	padding-left: 76px;
-}
-
-.login__form .Checkbox {
-    height: 50px;
-	width: 100%;
-	font-size: 15px;
-	color: #b7b7b7;
-	background: #ffffff;
-	border: none;
-	padding-left: 76px;
-}
-
-.login__form .Checkbox .btn-group {
-    display: block;
-    background-color: #fff;
 }
 
 .login__form form .input__item input::-webkit-input-placeholder {
@@ -1952,7 +1966,6 @@ ol {
 	background: #070720;
 	padding-top: 60px;
 	padding-bottom: 40px;
-	bottom: 0px;
 	position: relative;
 }
 
@@ -2123,9 +2136,9 @@ ol {
 	.footer__copyright__text {
 		text-align: center;
 	}
-	.anime__details__widget ul li span {
+	/* .anime__details__widget ul li span {
 		width: 90px;
-	}
+	} */
 	.anime__details__pic {
 		margin-bottom: 40px;
 	}
@@ -2293,7 +2306,7 @@ ol {
 }
 
 /* Small Device = 320px */
-
+/* anime__details__widget 지우 */
 @media only screen and (max-width: 479px) {
 	.hero__slider.owl-carousel .owl-nav {
 		display: none;
@@ -2312,9 +2325,9 @@ ol {
 		margin-right: 11px;
 		margin-bottom: 25px;
 	}
-	.anime__details__widget ul li span {
+	/* .anime__details__widget ul li span {
 		width: 85px;
-	}
+	} */
 	.anime__video__player .plyr__volume {
 		left: 65px;
 	}

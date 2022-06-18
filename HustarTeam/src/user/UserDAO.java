@@ -13,9 +13,10 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
+
 	         String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 	         String dbID = "root";
-	         String dbPassword = "Thsguswns";
+	         String dbPassword = "Thsguswns";// 패스워드 이거맞나 ㅇㅇ
 	         Class.forName("com.mysql.cj.jdbc.Driver");
 	         conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 	      } catch(Exception e) {
@@ -67,5 +68,61 @@ public class UserDAO {
 			// TODO: handle exception
 		}
 		return -1;
+	}
+	
+	// 여기 뭔가 문제가 있다
+	public User get(String userID) {
+		String SQL = "SELECT * FROM BBS WHERE userID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				User user = new User();
+				user.setUserID(rs.getString(1));
+				user.setUserPassword(rs.getString(2));
+				user.setUserName(rs.getString(3));
+				user.setUserGender(rs.getString(4));
+				user.setUserBirth(rs.getString(5));
+				user.setUserUniversity(rs.getString(6));
+				user.setUserMajor(rs.getString(7));
+				user.setUserPhone(rs.getString(8));
+				user.setUserEmail(rs.getString(9));
+				user.setUserAddress(rs.getString(10));
+				user.setUserAdmin(rs.getInt(11));
+				
+				System.out.println("user값 받아오기 성공");
+				return user;
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println("user값 받아오기 실패");
+		}
+		return null;
+		
+	}
+	
+	public int update(User user) {
+		String SQL = "UPDATE INTO USER VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, user.getUserID());
+			pstmt.setString(2, user.getUserPassword());
+			pstmt.setString(3, user.getUserName());
+			pstmt.setString(4, user.getUserGender());
+			pstmt.setString(5, user.getUserBirth());
+			pstmt.setString(6, user.getUserUniversity());
+			pstmt.setString(7, user.getUserMajor());
+			pstmt.setString(8, user.getUserPhone());
+			pstmt.setString(9, user.getUserEmail());
+			pstmt.setString(10, user.getUserAddress());
+			pstmt.setInt(11, user.getUserAdmin());
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("업데이트 실패");
+		}
+		return -1;
+		
 	}
 }

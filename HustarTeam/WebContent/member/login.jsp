@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="description" content="Anime Template">
 <meta name="keywords" content="Anime, unica, creative, html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Hustar | Template</title>
 
@@ -27,7 +27,7 @@
 	</header>
 		
 	
-	<!-- 내용  -->
+	<!-- 내용  1-->
 	<section class="normal-breadcrumb set-bg" data-setbg="/resource/img/mvimg01.jpg">
         <div class="container">
             <div class="row">
