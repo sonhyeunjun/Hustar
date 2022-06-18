@@ -40,6 +40,7 @@
         </div>
     </section>  
 
+
     <section class="h-90 bg-black">
         <div class="container py-9 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -106,7 +107,6 @@
                       
                       <div class="row">
                       
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
 
 
                     </div>

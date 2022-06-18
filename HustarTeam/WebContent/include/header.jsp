@@ -44,8 +44,6 @@
 					<div class="header__nav">
 						<nav class="header__menu mobile-menu">
 							<ul>
-								<li class="active"><a href="/member/notice.jsp">공지사항</a></li>
-								<li><a href="/poll/main.jsp">설문조사</a></li>
 								<li class="active"><a href="/">메인화면</a></li>
 								 <li><a href="/Board/Boardlist.jsp">공지사항<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">

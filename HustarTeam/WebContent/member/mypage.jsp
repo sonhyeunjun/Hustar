@@ -11,7 +11,6 @@
 <title>Insert title here</title>
 
 <!-- Google Font -->
-
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<!-- css 파일 -->
@@ -46,7 +45,6 @@
 	<script src="/resource/js/owl.carousel.min.js"></script>
 	<script src="/resource/js/main.js"></script>
 	
->>>>>>> branch 'master' of https://github.com/sonhyeunjun/Hustar.git
 </body>
 
 </html>

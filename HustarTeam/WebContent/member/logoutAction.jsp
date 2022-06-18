@@ -12,9 +12,7 @@
 		session.invalidate();
 	%>
 	<script>
-
 	location.href = "/";
-
 	</script>
 </body>
 </html>
