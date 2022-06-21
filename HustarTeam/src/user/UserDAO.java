@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 	
+	
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -16,7 +17,7 @@ public class UserDAO {
 			String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 			String dbID = "root";
 			String dbPassword = "Thsguswns";
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch(Exception e) {
 			e.printStackTrace();

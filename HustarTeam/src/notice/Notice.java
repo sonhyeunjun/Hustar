@@ -3,12 +3,12 @@ package notice;
 public class Notice {
 	private int noticeID;
 	private String noticeTitle;
-	private String userID;
-	private String createDate;
+	private String adminID;
+	private String noticeDate;
 	private String noticeContent;
 	private int noticeAvailable;
-	private String fileName;
-	private String fileRealName;
+	private String filename;
+	private String fileRealname;
 	private int noticeViews;
 	public int getNoticeID() {
 		return noticeID;
@@ -22,17 +22,17 @@ public class Notice {
 	public void setNoticeTitle(String noticeTitle) {
 		this.noticeTitle = noticeTitle;
 	}
-	public String getUserID() {
-		return userID;
+	public String getAdminID() {
+		return adminID;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setAdminID(String adminID) {
+		this.adminID = adminID;
 	}
-	public String getCreateDate() {
-		return createDate;
+	public String getNoticeDate() {
+		return noticeDate;
 	}
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
+	public void setNoticeDate(String noticeDate) {
+		this.noticeDate = noticeDate;
 	}
 	public String getNoticeContent() {
 		return noticeContent;
@@ -46,17 +46,17 @@ public class Notice {
 	public void setNoticeAvailable(int noticeAvailable) {
 		this.noticeAvailable = noticeAvailable;
 	}
-	public String getFileName() {
-		return fileName;
+	public String getFilename() {
+		return filename;
 	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
-	public String getFileRealName() {
-		return fileRealName;
+	public String getFileRealname() {
+		return fileRealname;
 	}
-	public void setFileRealName(String fileRealName) {
-		this.fileRealName = fileRealName;
+	public void setFileRealname(String fileRealname) {
+		this.fileRealname = fileRealname;
 	}
 	public int getNoticeViews() {
 		return noticeViews;

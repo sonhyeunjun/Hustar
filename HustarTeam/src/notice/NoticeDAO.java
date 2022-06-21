@@ -14,10 +14,10 @@ public class NoticeDAO {
 	
 	public NoticeDAO() {
 		try {
-			String dbURL = "jdbc:mariadb://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 			String dbID = "root";
-			String dbPassword = "root";
-			Class.forName("org.mariadb.jdbc.Driver");
+			String dbPassword = "Thsguswns";
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -55,7 +55,7 @@ public class NoticeDAO {
 	}
 	
 	public int noticeWrite(String noticeTitle, String userID, String noticeContent) {
-		String SQL = "INSERT INTO NOTICE VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO notice VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
@@ -77,7 +77,7 @@ public class NoticeDAO {
 	}
 	
 	public ArrayList<Notice> getList(int pageNumber){
-		String SQL = "SELECT * FROM NOTICE WHERE noticeID < ? AND noticeAvailable = 1 ORDER BY noticeID DESC LIMIT 10";
+		String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1 ORDER BY noticeID DESC LIMIT 10";
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -87,14 +87,30 @@ public class NoticeDAO {
 				Notice notice = new Notice();
 				notice.setNoticeID(rs.getInt(1));
 				notice.setNoticeTitle(rs.getString(2));
-				notice.setCreateDate(rs.getString(3));
+				notice.setNoticeDate(rs.getString(3));
 				notice.setNoticeAvailable(rs.getInt(4));
 				notice.setNoticeContent(rs.getString(5));
-				notice.setUserID(rs.getString(6));
+				notice.setAdminID(rs.getString(6));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return list; //디비오류
 	}
+//  페이징 처리를 위한 함수
+  public boolean nextPage(int pageNumber) {
+      String SQL = "SELECT * FROM notice WHERE noticeID < ? AND bbsAvailable = 1"; 
+      try {
+          PreparedStatement pstmt = conn.prepareStatement(SQL);
+          pstmt.setInt(1, getNext() - (pageNumber - 1 ) * 10);
+          rs = pstmt.executeQuery();
+          if (rs.next())
+          {
+              return true;
+          }
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+      return false; 
+  }
 }
