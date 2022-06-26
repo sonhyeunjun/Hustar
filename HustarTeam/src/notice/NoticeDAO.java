@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 public class NoticeDAO {
 	
-	private Connection conn;
-	private PreparedStatement pstmt;
+	private Connection conn; //커넥션 객체생성
+	private PreparedStatement pstmt; // 프리페얼드 스테이트먼트 sql을 실행할수있는객체 쿼리에 인자부여가능
 	private ResultSet rs;
 	
 	public NoticeDAO() {
 		try {
 			String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 			String dbID = "root";
-			String dbPassword = "Thsguswns";
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dbPassword = "Thsguswns";
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -54,13 +54,13 @@ public class NoticeDAO {
 		return -1; //디비오류
 	}
 	
-	public int noticeWrite(String noticeTitle, String userID, String noticeContent) {
+	public int noticeWrite(String noticeTitle, String adminID, String noticeContent) {
 		String SQL = "INSERT INTO notice VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
 			pstmt.setString(2, noticeTitle);
-			pstmt.setString(3, userID);
+			pstmt.setString(3, adminID);
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, noticeContent);
 			pstmt.setInt(6, 1);
@@ -91,6 +91,7 @@ public class NoticeDAO {
 				notice.setNoticeAvailable(rs.getInt(4));
 				notice.setNoticeContent(rs.getString(5));
 				notice.setAdminID(rs.getString(6));
+				list.add(notice);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,7 +100,7 @@ public class NoticeDAO {
 	}
 //  페이징 처리를 위한 함수
   public boolean nextPage(int pageNumber) {
-      String SQL = "SELECT * FROM notice WHERE noticeID < ? AND bbsAvailable = 1"; 
+      String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1"; 
       try {
           PreparedStatement pstmt = conn.prepareStatement(SQL);
           pstmt.setInt(1, getNext() - (pageNumber - 1 ) * 10);

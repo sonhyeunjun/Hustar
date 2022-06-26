@@ -10,6 +10,7 @@ public class Notice {
 	private String filename;
 	private String fileRealname;
 	private int noticeViews;
+	
 	public int getNoticeID() {
 		return noticeID;
 	}

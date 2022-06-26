@@ -3,11 +3,11 @@
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="notice.NoticeDAO"%>
 <%@ page import="notice.Notice"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.*"%>
 
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="ko">
 
 <head>
 <meta charset="UTF-8">
@@ -101,20 +101,19 @@
 											<%
 											NoticeDAO noticeDAO = new NoticeDAO();
 											ArrayList<Notice> list = noticeDAO.getList(pageNumber);
-											for (int i = 0; i < list.size(); i++) {
+											for (int i = 0; i < list.size(); i++) 
+											{
 											%>
 											<tr>
 												<td><%=list.get(i).getNoticeID()%></td>
-												<td>
-													<%=list.get(i).getNoticeID()%>"><%=list.get(i).getNoticeTitle()%></td>
+												<td><%=list.get(i).getNoticeTitle()%></td>
 												<td><%=list.get(i).getAdminID()%></td>
 												<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
 												+ list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>
 											</tr>
-											<%
-											}
-											%>
 
+											<%} %>
+										
 										</tbody>
 									</table>
 									
