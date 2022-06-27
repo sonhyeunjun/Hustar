@@ -158,6 +158,10 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="product__pagination1" style="text-align: right; margin-top: 8px;">
+				<button type="button" class="btn btn-outline-dark" >수정</button>
+				<button type="button" class="btn btn-outline-dark" >취소</button>
+			</div>
                    
                     </div>
                 </main>

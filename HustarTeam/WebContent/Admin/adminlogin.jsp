@@ -17,9 +17,9 @@
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
-</head>9
+</head>
 <body class="bg-primary">
-	<div id="layoutAuthentication">8
+	<div id="layoutAuthentication">
 		<div id="layoutAuthentication_content">
 			<main>
 				<div class="container">
