@@ -52,7 +52,7 @@
                                         <li><a href="#">자유게시판</a></li>
                                     </ul>
                                 </li>
-								<li><a href="/Howework/HWrite.jsp">과제제출</a></li>
+								<li><a href="/assignment/assignment-send.jsp">과제제출</a></li>
 								<li><a href="#">출결확인</a></li>
 							</ul>
 						</nav>
