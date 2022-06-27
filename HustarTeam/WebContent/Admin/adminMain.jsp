@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="notice.NoticeDAO"%>
+<%@ page import="notice.Notice"%>
+<%@ page import="java.util.*"%>
+
+	<%
+	int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
+	if (request.getParameter("pageNumber") != null) {
+		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+	}
+	%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -131,7 +143,35 @@
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
                             </div>
-                            
+                            <div class="card-body"><table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>제목</th>
+                                                <th>작성자</th>
+                                                <th>작성일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-light">
+                                            <%
+                                            NoticeDAO noticeDAO = new NoticeDAO();
+                                            ArrayList<Notice> list = noticeDAO.getList(pageNumber);
+                                            for (int i = 0; i < list.size(); i++) 
+                                            {
+                                            %>
+                                            <tr>
+                                                <td><%=list.get(i).getNoticeID()%></td>
+                                                <td><a href="adminNoticeDetail.jsp?id=<%= list.get(i).getNoticeID() %>"><%=list.get(i).getNoticeTitle()%></a></td>
+                                                <td><%=list.get(i).getAdminID()%></td>
+                                                <td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
+                                                + list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>
+                                            </tr>
+    
+                                            <%} %>
+                                          
+                                        </tbody>
+                                      </table>
+                                      </div>
                         </div>
                     </div>
                 </main>

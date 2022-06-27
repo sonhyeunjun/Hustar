@@ -77,11 +77,11 @@ public class NoticeDAO {
 	}
 	
 	public ArrayList<Notice> getList(int pageNumber){
-		String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1 ORDER BY noticeID DESC LIMIT 10";
+		String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1 ORDER BY noticeID DESC LIMIT 5";
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext() - (pageNumber -1) * 10);
+			pstmt.setInt(1, getNext() - (pageNumber -1) * 5);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Notice notice = new Notice();
@@ -103,7 +103,7 @@ public class NoticeDAO {
       String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1"; 
       try {
           PreparedStatement pstmt = conn.prepareStatement(SQL);
-          pstmt.setInt(1, getNext() - (pageNumber - 1 ) * 10);
+          pstmt.setInt(1, getNext() - (pageNumber - 1 ) * 5);
           rs = pstmt.executeQuery();
           if (rs.next())
           {
