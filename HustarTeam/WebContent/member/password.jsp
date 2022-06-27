@@ -10,6 +10,7 @@
         <meta name="author" content="" />
         <title>Password Reset - SB Admin</title>
        	<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
+       	<link href="/resource/css/adminstyles.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="/resource/js/login/register.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
