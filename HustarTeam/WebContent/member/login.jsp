@@ -59,7 +59,7 @@
                             <button type="submit" class="site-btn" onclick="fn_submit(); return false;">로그인 하기</button>
                         </form>
                         
-                        <a href="#" class="forget_pass">비밀번호 찾기</a>
+                        <a href="/member/password.jsp" class="forget_pass">비밀번호 찾기</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
