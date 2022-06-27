@@ -25,7 +25,7 @@
 	</header>
 		
 	
-	<!-- 내용1  -->
+	<!-- 내용11  -->
 	
         <div class="container">
             <div class="row">
