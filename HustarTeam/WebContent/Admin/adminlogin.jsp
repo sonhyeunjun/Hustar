@@ -48,7 +48,7 @@
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<a class="small" href="password.html">Forgot Password?</a> <input
+											<a class="small" href="/member/password.jsp">Forgot Password?</a> <input
 												type="submit" class="btn btn-primary" value="로그인" />
 										</div>
 									</form>
@@ -56,7 +56,7 @@
 								</div>
 								<div class="card-footer text-center py-3">
 									<div class="small">
-										<a href="register.html">Need an account? Sign up!</a>
+										<a href="/member/register.jsp">Need an account? Sign up!</a>
 									</div>
 								</div>
 							</div>
@@ -65,20 +65,7 @@
 				</div>
 			</main>
 		</div>
-		<div id="layoutAuthentication_footer">
-			<footer class="py-4 bg-light mt-auto">
-				<div class="container-fluid px-4">
-					<div
-						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2022</div>
-						<div>
-							<a href="#">Privacy Policy</a> &middot; <a href="#">Terms
-								&amp; Conditions</a>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
+		
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
