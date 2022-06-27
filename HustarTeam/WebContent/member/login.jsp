@@ -65,7 +65,7 @@
                 <div class="col-lg-6">
                     <div class="login__register">
                         <h3>아이디가 없으세요?</h3>
-                        <a href="/member/register.jsp" class="primary-btn">1회원가입</a>
+                        <a href="/member/register.jsp" class="primary-btn">회원가입</a>
                     </div>
                 </div>
             </div>
