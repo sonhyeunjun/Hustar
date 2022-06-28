@@ -47,7 +47,7 @@
                         <li><a class="dropdown-item" href="#!">환경설정</a></li>
                         <li><a class="dropdown-item" href="#!">활동 로그</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="adminLogout.jsp">로그아웃</a></li>
                     </ul>
                 </li>
             </ul>

@@ -98,7 +98,7 @@ public class NoticeDAO {
 		}
 		return list; //디비오류
 	}
-//  페이징 처리를 위한 함수
+  //  페이징 처리를 위한 함수
   public boolean nextPage(int pageNumber) {
       String SQL = "SELECT * FROM notice WHERE noticeID < ? AND noticeAvailable = 1"; 
       try {
@@ -114,4 +114,35 @@ public class NoticeDAO {
       }
       return false; 
   }
+  //----------------------------------
+  
+  //공지사항 수정 메소드
+  public int update(int noticeID,String noticeTitle,String noticeContent ) {
+	  String sql = "update notice set noticeTitle = ? , noticeContent = ? where noticeId =?";
+	  
+	  try {
+		  PreparedStatement pstmt = conn.prepareStatement(sql);
+		  pstmt.setString(1,noticeTitle);
+		  pstmt.setString(2,noticeContent);
+		  pstmt.setInt(3,noticeID);
+	  }catch (Exception e) {
+		  e.printStackTrace();
+	  }
+	  return -1 ; //db오류
+  }
+  //-------------------------------
+  
+  //공지사항 삭제 메소드
+  public int delete(int noticeID) {
+	  
+	  String sql = "update set notice noticeAvailable = 0 where noticeID = ?";
+	  try {
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, noticeID);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	  return -1; //db오류
+  }
+  //------------------------------
 }

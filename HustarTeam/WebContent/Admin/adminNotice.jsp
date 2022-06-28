@@ -20,7 +20,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <meta name="description" content="" />
             <meta name="author" content="" />
-            <title>Tables - SB Admin</title>
+            <title>관리자 페이지</title>
             <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
             <link href="/resource/css/adminstyles.css" rel="stylesheet" />
             <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -46,7 +46,7 @@
                         <li><a class="dropdown-item" href="#!">환경설정</a></li>
                         <li><a class="dropdown-item" href="#!">활동 로그</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="adminLogout.jsp">로그아웃</a></li>
                     </ul>
                 </li>
             </ul>
@@ -101,7 +101,7 @@
                                 </a>
                                 <a class="nav-link" href="/Admin/adminNotice.jsp">
                                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    공지사랑
+                                    공지사항 관리
                                 </a>
                             </div>
                         </div>
@@ -146,7 +146,10 @@
                                                 <td><a href="adminNoticeDetail.jsp?id=<%= list.get(i).getNoticeID() %>"><%=list.get(i).getNoticeTitle()%></a></td>
                                                 <td><%=list.get(i).getAdminID()%></td>
                                                 <td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
-                                                + list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>
+                                                + list.get(i).getNoticeDate().substring(14, 16) + "분"%>
+                                                <button type="button" class="btn btn-secondary">수정</button>
+                                                <button type="button" class="btn btn-secondary">삭제</button>
+                                                </td>
                                             </tr>
     
                                             <%} %>
