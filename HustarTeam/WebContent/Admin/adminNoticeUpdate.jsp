@@ -39,7 +39,7 @@ if (request.getParameter("pageNumber") != null) {
         script.println("location.href = 'adminNotice.jsp'");
         script.println("</script>");
     }
-       Notice notice = new NoticeDAO()
+       Notice notice = new NoticeDAO()s
   //  Notice notice = new NoticeDAO().getNotice(noticeID);
     if (!noticeID.equals(notice.get))
     {

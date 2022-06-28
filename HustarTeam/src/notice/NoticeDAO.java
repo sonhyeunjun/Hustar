@@ -145,4 +145,17 @@ public class NoticeDAO {
 	  return -1; //db오류
   }
   //------------------------------
+  public int getCount() {
+      int count = 0;
+      try {
+         pstmt = conn.prepareStatement("select count(*) from notice");
+         rs = pstmt.executeQuery();
+         if(rs.next()) {
+            count = rs.getInt(1);
+         }
+      }catch(Exception ex) {
+         System.out.println(ex);
+      }
+      return count;
+   }
 }
