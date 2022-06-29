@@ -121,11 +121,65 @@
 										<button type="button" class="btn btn-light"
 											onclick="location.href='/Board/BoardWrite.jsp'">글쓰기</button>
 									</div>
-									<div class="product__pagination" style="text-align: center">
-										<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a
-											href="#">4</a> <a href="#">5</a> <a href="#"><i
-											class="fa fa-angle-double-right"></i></a>
-									</div>
+									<nav aria-label="Page navigation example">
+								<ul class="pagination justify-content-center">
+									<%
+									if (pageNumber == 1) {
+									%>
+									<li class="page-item disabled"><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
+									<%
+									} else {
+									%>
+									<li class="page-item"><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
+									<%
+									}
+									%>
+									<%
+									int count = noticeDAO.getCount();
+									int totalPage = count / 5;
+									if (count % 5 != 0) {
+										totalPage += 1;
+									}
+
+									for (int i = 1; i <= totalPage; i++) {
+									%>
+									<%
+									if (pageNumber == i) {
+									%>
+
+									<li class="page-item active"><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
+									<%
+									} else {
+									%>
+									<li class="page-item"><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
+									<%
+									}
+									%>
+									<%
+									}
+									%>
+
+
+									<%
+									if (pageNumber == totalPage) {
+									%>
+									<li class="page-item disabled"><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
+									<%
+									} else {
+									%>
+									<li class="page-item "><a class="page-link"
+										href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
+									<%
+									}
+									%>
+
+								</ul>
+							</nav>
 								</div>
 							</div>
 						</div>
