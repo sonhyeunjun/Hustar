@@ -20,7 +20,7 @@ request.setCharacterEncoding("UTF-8");
 
 	<%
 	
-	//세션관리
+	
 	String admin_id = null;
 	if (session.getAttribute("admin_id") != null) {
 		admin_id = (String) session.getAttribute("admin_id");
@@ -38,6 +38,8 @@ request.setCharacterEncoding("UTF-8");
 	AdminDAO adminDAO = new AdminDAO();
 	int result = adminDAO.login(admin.getAdmin_id(), admin.getAdmin_pw());
 	if (result == 1) {
+		//디비아이디 비번관 입력한것이 같으면 로그인하고 세션 부여
+		session.setAttribute("admin_id", admin.getAdmin_id());
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href = 'adminMain.jsp'");

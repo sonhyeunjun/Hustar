@@ -12,6 +12,7 @@ if (request.getParameter("pageNumber") != null) {
 }
 %>
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -30,41 +31,7 @@ if (request.getParameter("pageNumber") != null) {
 	crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/Admin/adminMain.jsp">Start
-			Bootstrap</a>
-		<!-- Sidebar Toggle-->
-		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
-			id="sidebarToggle" href="#!">
-			<i class="fas fa-bars"></i>
-		</button>
-		<!-- Navbar Search-->
-		<form
-			class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-			<div class="input-group">
-				<input class="form-control" type="text" placeholder="Search for..."
-					aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-				<button class="btn btn-primary" id="btnNavbarSearch" type="button">
-					<i class="fas fa-search"></i>
-				</button>
-			</div>
-		</form>
-		<!-- Navbar-->
-		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-					class="fas fa-user fa-fw"></i></a>
-				<ul class="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">환경설정</a></li>
-					<li><a class="dropdown-item" href="#!">활동 로그</a></li>
-					<li><hr class="dropdown-divider" /></li>
-					<li><a class="dropdown-item" href="adminLogout.jsp">로그아웃</a></li>
-				</ul></li>
-		</ul>
-	</nav>
+	<%@ include file="/include/adminHeader.jsp"%>
 	<div id="layoutSidenav">
 		<div id="layoutSidenav_nav">
 			<nav class="sb-sidenav accordion sb-sidenav-dark"
@@ -178,12 +145,12 @@ if (request.getParameter("pageNumber") != null) {
 									<tr>
 										<td><%=list.get(i).getNoticeID()%></td>
 										<td><a
-											href="adminNoticeDetail.jsp?id=<%=list.get(i).getNoticeID()%>"><%=list.get(i).getNoticeTitle()%></a></td>
+											href="adminNoticeDetail.jsp?noticeID=<%=list.get(i).getNoticeID()%>"><%=list.get(i).getNoticeTitle()%></a></td>
 										<td><%=list.get(i).getAdminID()%></td>
 										<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
 		+ list.get(i).getNoticeDate().substring(14, 16) + "분"%>
-											<button type="button" class="btn btn-secondary">수정</button>
-											<button type="button" class="btn btn-secondary">삭제</button></td>
+											<a type="button" class="btn btn-secondary" href="adminNoticeUpdate.jsp?noticeID=<%=list.get(i).getNoticeID()%>">수정</a>
+											<a type="button" class="btn btn-secondary" href="adminNoticeDeleteAction.jsp?noticeID=<%=list.get(i).getNoticeID()%>">삭제</a></td>
 									</tr>
 
 									<%
@@ -192,8 +159,8 @@ if (request.getParameter("pageNumber") != null) {
 
 								</tbody>
 							</table>
-
-							<nav aria-label="Page navigation example">
+						<!-- 페이징 처리 -->
+						<nav aria-label="Page navigation example">
 								<ul class="pagination justify-content-center">
 									<%
 									if (pageNumber == 1) {
@@ -249,14 +216,17 @@ if (request.getParameter("pageNumber") != null) {
 									<%
 									}
 									%>
-
+									<a type="button" class="btn btn-secondary" href="adminNoticeWrite.jsp">공지사항 등록</a>
 								</ul>
 							</nav>
+						
+						
+						
+						<!-- 페이징 처리 -->
 						</div>
 					</div>
 				</div>
 			</main>
-
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">
 					<div
@@ -275,3 +245,6 @@ if (request.getParameter("pageNumber") != null) {
 
 </body>
 </html>
+
+
+

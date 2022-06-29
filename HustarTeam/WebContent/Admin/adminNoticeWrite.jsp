@@ -6,59 +6,17 @@
 <%@ page import="java.util.*"%>
 
 <%
+String userID = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
+if (session.getAttribute("userID") != null) {
+	userID = (String) session.getAttribute("userID");
+}
+%>
+<%
 int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
 if (request.getParameter("pageNumber") != null) {
 	pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 }
 %>
-
-<%
-    String admin_id = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
-    if (session.getAttribute("admin_id") != null)
-    {
-    	admin_id = (String)session.getAttribute("admin_id");
-    }
-    if (admin_id == null)
-    {
-        PrintWriter script = response.getWriter();
-        script.println("<script>");
-        script.println("alert('로그인을 하세요')");
-        script.println("location.href = 'adminlogin.jsp'");
-        script.println("</script>");
-    }
-    
-    int noticeID = 0;
-    if (request.getParameter("noticeID") != null)
-    {
-    	noticeID = Integer.parseInt(request.getParameter("noticeID"));
-    }
-    if (noticeID == 0)
-    {
-    	
-    	System.out.print("유효하지않은 아이디");
-    	System.out.print(noticeID);
-    	System.out.print(request.getParameter("noticeID"));
-    	
-    	System.out.print("유효하지않은 아이디");
-        PrintWriter script = response.getWriter();
-        script.println("<script>");
-        script.println("alert('유효하지 않은 글입니다')");
-        script.println("location.href = 'adminNotice.jsp'");
-        script.println("</script>");
-    }
-
-       Notice notice = new NoticeDAO().getNotice(noticeID);
-    if (!admin_id.equals(notice.getAdminID()))
-    {
-        PrintWriter script = response.getWriter();
-        script.println("<script>");
-        script.println("alert('권한이 없습니다')");
-        script.println("location.href = 'bbs.jsp'");
-        script.println("</script>");
-    }
-    
-%>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +27,7 @@ if (request.getParameter("pageNumber") != null) {
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>게시물 수정</title>
+<title>Dashboard - SB Admin</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
@@ -198,48 +156,45 @@ if (request.getParameter("pageNumber") != null) {
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">대시보드</h1>
+					<h1 class="mt-4">공지사항 등록</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">대시보드</li>
+						<li class="breadcrumb-item active">글쓰기 </li>
 					</ol>
-				
+					
 					<div class="card mb-4">
-						<div class="card-header">
-							<i class="fas fa-table me-1"></i> 공지사항 수정하기
-						</div>
-						<!--  공지사항 수정 양식 -->
+					
+						<!-- 게시판 글쓰기 양식 부분 -->
 						<div class="container">
 							<div class="row">
-								<form method="post" action="adminNoticeUpdateAction.jsp?noticeID=<%=noticeID%>">
+								<form method="post" action="adminNoticewriteAction.jsp">
 									<table class="table table-striped"
 										style="text-align: center; border: 1px solid #dddddd">
 										<thead>
 											<tr>
 												<th colspan="2"
 													style="background-color: #eeeeee; text-align: center;">게시판
-													글 수정 양식</th>
+													글쓰기 양식</th>
 
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td><input type="text" class="form-control"
-													placeholder="글 제목" name="noticeTitle" maxlength="50" 
-													value="<%=notice.getNoticeTitle()%>"></td>
+													placeholder="글 제목" name="noticeTitle" maxlength="50"></td>
 											</tr>
 											<tr>
 												<td><textarea class="form-control" placeholder="글 내용"
-														name="noticeContent" maxlength="2048" style="height: 350px"><%=notice.getNoticeContent()%></textarea></td>
+														name="noticeContent" maxlength="2048" style="height: 350px"></textarea></td>
 											</tr>
 										</tbody>
 									</table>
-									<input type="submit" class="btn btn-primary pull-right" value="글수정">
+									<input type="submit" class="btn btn-primary pull-right"
+										value="글쓰기">
 								</form>
 							</div>
+							<!-- 게시판 글쓰기 양식 부분 -->
 						</div>
-						<!-- 공지사항 수정 양식 -->
 					</div>
-				</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">
