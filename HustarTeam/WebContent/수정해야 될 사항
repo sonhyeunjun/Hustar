@@ -1,0 +1,9 @@
+#calendar
+비로그인 시 메모 작성 기능 off, 기본 일정만 표기
+로그인 시 메모 작성 기능 on, userID에 맞는 메모 내용 표기
+
+#DB - calendarmemo
+userID 추가
+
+#index
+calendar.jsp 이식하기
