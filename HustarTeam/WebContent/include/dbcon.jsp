@@ -4,18 +4,21 @@
 <%@ page import="java.sql.*"%>
   
 <%
-String URL = "jdbc:mysql://localhost:8080/HustarTeam?useUnicode=true&characterEncoding=utf8";
-String USERNAME = "root";
-String PASS = "123123";
+PreparedStatement pstmt = null;
+String dbDriver = "com.mysql.cj.jdbc.Driver"; //JDBC 드라이버의 클래스 경로
+String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1"; //접속하려는 데이터베이스의 정보
+String dbID = "root";
+String dbPassword = "Thsguswns";
 
 /* 접속 드라이브 연결 */
-Class.forName("com.mysql.jdbc.Driver"); 
+Class.forName(dbDriver);
 
 /* 접속 정보 설정 및 적용 */
-Connection conn=DriverManager.getConnection(URL,USERNAME,PASS);
+Connection conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 
 /* 접속 인스턴스 생성  */
 Statement stmt = conn.createStatement();
+/* pstmt = conn.prepareStatement(); */
 
 request.setCharacterEncoding("utf-8");
 %>
