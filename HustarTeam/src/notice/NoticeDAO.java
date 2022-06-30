@@ -81,7 +81,7 @@ public class NoticeDAO {
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext() - (pageNumber -1) * 5);
+			pstmt.setInt(1, getCount() - (pageNumber -1) * 5);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Notice notice = new Notice();
@@ -148,7 +148,7 @@ public class NoticeDAO {
   public int getCount() {
       int count = 0;
       try {
-         pstmt = conn.prepareStatement("select count(*) from notice");
+         pstmt = conn.prepareStatement("select count(*) from notice where noticeAvailable = 1");
          rs = pstmt.executeQuery();
          if(rs.next()) {
             count = rs.getInt(1);

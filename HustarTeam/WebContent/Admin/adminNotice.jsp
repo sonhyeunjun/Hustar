@@ -181,7 +181,6 @@ if (request.getParameter("pageNumber") != null) {
 									if (count % 5 != 0) {
 										totalPage += 1;
 									}
-
 									for (int i = 1; i <= totalPage; i++) {
 									%>
 									<%
