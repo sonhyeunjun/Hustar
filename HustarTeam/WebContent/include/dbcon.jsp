@@ -15,6 +15,9 @@ Class.forName(dbDriver);
 
 /* 접속 정보 설정 및 적용 */
 Connection conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+if (conn == null) {
+	out.println("Calendar 데이터베이스 연결 실패");
+}
 
 /* 접속 인스턴스 생성  */
 Statement stmt = conn.createStatement();

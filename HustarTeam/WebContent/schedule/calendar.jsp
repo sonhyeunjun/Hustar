@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="/include/dbcon.jsp"%>
 <%@ page import="java.util.Calendar"%>
-<%@ page import="java.sql.*"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%
-request.setCharacterEncoding("UTF-8");
 
 Calendar cal = Calendar.getInstance(); // 인스턴스한 Calendar 객체 생성, 모두와 공유하는 객체
 
@@ -34,23 +33,6 @@ month = cal.get(Calendar.MONTH) + 1;
 int week = cal.get(Calendar.DAY_OF_WEEK); // 1(일)~7(토), 매 월 1일의 요일을 표시
 %>
 <!DOCTYPE html>
-<%
-//데이터베이스를 연결하는 관련 변수를 선언한다
-Connection conn = null;
-PreparedStatement pstmt = null;
-//데이터베이스를 연결하는 관련 정보를 문자열로 선언한다.
-String dbDriver = "com.mysql.cj.jdbc.Driver"; //JDBC 드라이버의 클래스 경로
-String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1"; //접속하려는 데이터베이스의 정보
-String dbID = "root";
-String dbPassword = "Thsguswns";
-//JDBC 드라이버 클래스를 로드한다.
-Class.forName(dbDriver);
-//데이터베이스 연결 정보를 이용해서 Connection 인스턴스를 확보한다.
-conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-if (conn == null) {
-	out.println("Calendar 데이터베이스 연결 실패");
-}
-%>
 <html>
 <head>
 <meta charset="UTF-8">

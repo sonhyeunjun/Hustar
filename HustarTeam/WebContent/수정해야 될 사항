@@ -1,9 +1,11 @@
 #calendar
 비로그인 시 메모 작성 기능 off, 기본 일정만 표기
-로그인 시 메모 작성 기능 on, userID에 맞는 메모 내용 표기
+(선택)
+1. 로그인 시 메모 작성 기능 on, userID에 맞는 메모 내용 표기
+2. 관리자만 메모 작성 기능 on, 작성된 메모는 모든 유저가 공유
 
 #DB - calendarmemo
-userID 추가
+(1 선택시)userID 추가
 
 #index
 calendar.jsp 이식하기

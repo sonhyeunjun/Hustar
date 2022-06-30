@@ -32,6 +32,9 @@
     <form method="post" action="/member/userUpdate.jsp">
 		<button type="submit" class="site-btn" onclick="fn_submit(); return false;">회원정보 수정</button>
     </form>
+    <form method="post" action="/schedule/calendar.jsp">
+		<button type="submit" class="site-btn" onclick="fn_submit(); return false;">내 캘린더</button>
+    </form>
 </div>
 
 	
