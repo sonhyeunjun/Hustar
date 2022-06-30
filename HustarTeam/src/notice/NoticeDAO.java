@@ -81,7 +81,7 @@ public class NoticeDAO {
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, getCount() - (pageNumber -1) * 5);
+			pstmt.setInt(1, getCount()+1 - (pageNumber -1) * 5);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Notice notice = new Notice();
