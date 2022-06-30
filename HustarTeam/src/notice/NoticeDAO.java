@@ -118,13 +118,14 @@ public class NoticeDAO {
   
   //공지사항 수정 메소드
   public int update(int noticeID,String noticeTitle,String noticeContent ) {
-	  String sql = "update notice set noticeTitle = ? , noticeContent = ? where noticeId =?";
+	  String sql = "update notice set noticeTitle = ? ,noticeContent = ? where noticeID = ?";
 	  
 	  try {
 		  PreparedStatement pstmt = conn.prepareStatement(sql);
 		  pstmt.setString(1,noticeTitle);
 		  pstmt.setString(2,noticeContent);
 		  pstmt.setInt(3,noticeID);
+		  return pstmt.executeUpdate();
 	  }catch (Exception e) {
 		  e.printStackTrace();
 	  }
@@ -135,16 +136,73 @@ public class NoticeDAO {
   //공지사항 삭제 메소드
   public int delete(int noticeID) {
 	  
-	  String sql = "update set notice noticeAvailable = 0 where noticeID = ?";
+	  String sql = "update notice set noticeAvailable = 0 where noticeID = ?";
 	  try {
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, noticeID);
+		return pstmt.executeUpdate();
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 	  return -1; //db오류
   }
   //------------------------------
+
+  
+  //공지글 가져오기
+  public Notice getNotice(int noticeID)
+  {
+          String SQL = "SELECT * FROM notice WHERE noticeID = ?"; 
+          try {
+              PreparedStatement pstmt = conn.prepareStatement(SQL);
+              pstmt.setInt(1, noticeID);
+              rs = pstmt.executeQuery();
+              if (rs.next())
+              {
+            	  Notice notice = new Notice();
+            	  notice.setNoticeID(rs.getInt(1));
+            	  notice.setNoticeTitle(rs.getString(2));
+            	  notice.setNoticeDate(rs.getString(3));
+            	  notice.setNoticeAvailable(rs.getInt(4));
+            	  notice.setNoticeContent(rs.getString(5));
+            	  notice.setAdminID(rs.getString(6));
+            	  notice.setNoticeViews(rs.getInt(7));
+            	  notice.setFilename(rs.getString(8));
+            	  notice.setFileRealname(rs.getString(9));
+            	  
+                  return notice;
+              }
+          } catch (Exception e) {
+              e.printStackTrace();
+          }
+          return null; 
+      }
+  //-------------------------------
+  
+  //공지글 쓰기
+  public int write(String noticeTitle, String admin_id, String noticeContent) {
+      String SQL = "INSERT INTO notice VALUES (?,?,?,?,?,?,?,?,?)";
+      try {
+          PreparedStatement pstmt = conn.prepareStatement(SQL);
+          pstmt.setInt(1, getNext());
+          pstmt.setString(2, noticeTitle);
+          pstmt.setString(3, getDate());
+          pstmt.setInt(4, 1);
+          pstmt.setString(5, noticeContent);
+          pstmt.setString(6, admin_id);
+          pstmt.setInt(7, 0);
+          pstmt.setString(8, " ");
+          pstmt.setString(9, " ");
+          //파일부분 미구현
+          return pstmt.executeUpdate();
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+      return -1; // 데이터베이스 오류
+      
+  }
+  //-----------------------------------
+
   public int getCount() {
       int count = 0;
       try {
@@ -158,4 +216,5 @@ public class NoticeDAO {
       }
       return count;
    }
+
 }
