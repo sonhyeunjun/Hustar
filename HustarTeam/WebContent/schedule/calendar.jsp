@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="/include/dbcon.jsp"%>
 <%@ page import="java.util.Calendar"%>
-<%@ page import="java.sql.*"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%
-request.setCharacterEncoding("UTF-8");
 
 Calendar cal = Calendar.getInstance(); // 인스턴스한 Calendar 객체 생성, 모두와 공유하는 객체
 
@@ -34,123 +33,11 @@ month = cal.get(Calendar.MONTH) + 1;
 int week = cal.get(Calendar.DAY_OF_WEEK); // 1(일)~7(토), 매 월 1일의 요일을 표시
 %>
 <!DOCTYPE html>
-<%
-//데이터베이스를 연결하는 관련 변수를 선언한다
-Connection conn = null;
-PreparedStatement pstmt = null;
-//데이터베이스를 연결하는 관련 정보를 문자열로 선언한다.
-String dbDriver = "com.mysql.cj.jdbc.Driver"; //JDBC 드라이버의 클래스 경로
-String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1"; //접속하려는 데이터베이스의 정보
-String dbID = "root";
-String dbPassword = "Thsguswns";
-//JDBC 드라이버 클래스를 로드한다.
-Class.forName(dbDriver);
-//데이터베이스 연결 정보를 이용해서 Connection 인스턴스를 확보한다.
-conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-if (conn == null) {
-	out.println("Calendar 데이터베이스 연결 실패");
-}
-%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Hustar Calendar</title>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	font-size: 14px;
-	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
-}
-
-a {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-a:active, a:hover {
-	text-decoration: underline;
-	color: #F28011;
-}
-
-#note {
-	background-color: lightgreen;
-	color: white;
-}
-
-.calendar {
-	width: 500px;
-	margin: 60px auto;
-}
-
-.calendar .title {
-	height: 37px;
-	line-height: 37px;
-	text-align: center;
-	font-weight: 600;
-}
-
-.calendar .selectField {
-	border: 1px solid #999;
-	padding: 2px 7px;
-	border-radius: 3px;
-	font-family: "맑은 고딕", 나눔고딕, 돋움, sans-serif;
-	vertical-align: baseline;
-}
-
-.calendar table {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-.calendar table thead tr:first-child {
-	background: #f6f6f6;
-}
-
-.calendar table td {
-	width: 100px;
-	height: 30px;
-	text-align: center;
-	border: 1px solid #ccc;
-}
-
-.calendar table td:nth-child(7n+1) {
-	color: red;
-}
-
-.calendar table td:nth-child(7n) {
-	color: blue;
-}
-
-.calendar table td.gray {
-	color: #ccc;
-}
-
-.calendar table td.today {
-	font-weight: 700;
-	background: yellow;
-}
-
-.calendar .footer {
-	height: 25px;
-	line-height: 25px;
-	text-align: right;
-	font-size: 12px;
-}
-
-.memo{
-	height: 37px;
-
-	text-align: center;
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="/resource/css/calendar/calendar.css">
 <script type="text/javascript">
 	// 선택한 연/달로 이동
 	function change() {
