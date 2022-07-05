@@ -36,7 +36,7 @@ body {
 	height: 100%;
 	font-family: "Mulish", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	background: #0b0c2a;
+	background: #ffffff;
 }
 
 h1,
@@ -184,7 +184,7 @@ ol {
 .site-btn {
 	font-size: 13px;
 	color: #ffffff;
-	background: #e53637;
+	background: #25f57d;
 	font-weight: 700;
 	border: none;
 	border-radius: 2px;

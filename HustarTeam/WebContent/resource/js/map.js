@@ -17,20 +17,6 @@ navigator.geolocation
 			+ ", " + longitude);
 	});
 //--
-
-//지도생성
-var container = document
-	.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-var options = { //지도를 생성할 때 필요한 기본 옵션
-	center: new kakao.maps.LatLng(
-		adminlet, adminlong), //지도의 중심좌표.
-	level: 3
-	//지도의 레벨(확대, 축소 정도)
-};
-
-var map = new kakao.maps.Map(container,
-	options); //지도 생성 및
-
 var mapContainer = document
 	.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {
@@ -40,6 +26,19 @@ var mapContainer = document
 		level: 3
 		// 지도의 확대 레벨
 	};
+//지도생성
+var container = document
+	.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(
+		adminlet, adminlong), //지도의 중심좌표.
+		draggable: false,
+	level: 3
+	//지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container,
+	options); //지도 생성 및
 
 var map = new kakao.maps.Map(mapContainer,
 	mapOption); // 지도를 생성합니다
