@@ -206,7 +206,7 @@ public class NoticeDAO {
   public int getCount() {
       int count = 0;
       try {
-         pstmt = conn.prepareStatement("select count(*) from notice");
+         pstmt = conn.prepareStatement("select count(*) from notice where noticeAvailable = 1");
          rs = pstmt.executeQuery();
          if(rs.next()) {
             count = rs.getInt(1);
