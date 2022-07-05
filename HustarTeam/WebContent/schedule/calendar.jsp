@@ -76,7 +76,7 @@ int week = cal.get(Calendar.DAY_OF_WEEK); // 1(일)~7(토), 매 월 1일의 요�
 				</select>
 			</form>
 		</div>
-
+		</div>
 		<table>
 			<thead>
 				<tr>

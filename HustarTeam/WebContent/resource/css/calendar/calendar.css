@@ -1,12 +1,18 @@
-.calendar{ background-color:white; }
+
+.calendar{
+	margin-top : 30px;
+	background-color:#070720; 
+}
 
 .calendar table {
     margin:auto; 
+    color: white;
+    font-family: 'Lato', sans-serif;
 }
 .calendar table{  width: 100%;	}
 
  .days {
-  color: #AAAAAA;
+  color: white;
  
   font-size: 18px;
   left: 355px;
@@ -17,4 +23,18 @@
 #note{
 	width: 200px;
 	height : 60px;
+}
+
+thead tr td {
+	color:white;
+	text-align:center;
+    line-height: 68.5714px;
+}
+
+td:hover {
+ background-color: #F8F8F8;
+}
+
+td .gray {
+	text-align:center;
 }
