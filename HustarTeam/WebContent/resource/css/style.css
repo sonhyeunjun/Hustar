@@ -2371,4 +2371,25 @@ Board Write
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
+	
+}
+
+@media (max-width:400px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+    #calendar {
+    	display : block;
+        width : 390px;
+        height : 400px;  
+    }
+	 #notice {
+    	display : block;
+        width : 390px;
+        height : 500px;  
+    }
+     #attmap {
+    	display : block;
+        width : 390px;
+        height : 500px;  
+    }
+   
+
 }

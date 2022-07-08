@@ -68,7 +68,9 @@ if (conn == null) {
 <meta name="keywor ds" content="Anime, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <title>Hustar | Template</title>
+
 
 <!-- Google Font -->
 <link
@@ -81,8 +83,9 @@ if (conn == null) {
 <link rel="stylesheet" href="/resource/css/common.css" type="text/css">
 <link rel="stylesheet" href="/resource/css/calendar/calendar.css"
 	type="text/css">
-	
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=03dc0c1d6af4d7990e0d8728ccb7d5af"></script>
+
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=03dc0c1d6af4d7990e0d8728ccb7d5af"></script>
 </head>
 <body>
 
@@ -99,79 +102,80 @@ if (conn == null) {
 			<div class="col-lg-12">
 				<div class="product__page__content">
 					<div class="row">
-						<div class="col-12">
-							<div class="calendar">
+						<div class="col-12" id="calendar">
+							<div>
 								<!-- 달력 테스트 -->
-								<div class="container">
-								<table>
-									<thead>
-										<tr class="days">
-											<td>일</td>
-											<td>월</td>
-											<td>화</td>
-											<td>수</td>
-											<td>목</td>
-											<td>금</td>
-											<td>토</td>
-										</tr>
-									</thead>
-									<tbody>
-										<%
-										// 1일 앞 달
-										Calendar preCal = (Calendar) cal.clone();
-										preCal.add(Calendar.DATE, -(week - 1)); // week-1 = 첫째 주에서 앞 달의 범위
-										int preDate = preCal.get(Calendar.DATE); // -(week-1) = 첫째 주에서 앞 달의 범위만큼 역으로 계산
+								<div>
+									<table>
+										<thead>
+											<tr class="days">
+												<td>일</td>
+												<td>월</td>
+												<td>화</td>
+												<td>수</td>
+												<td>목</td>
+												<td>금</td>
+												<td>토</td>
+											</tr>
+										</thead>
+										<tbody>
+											<%
+											// 1일 앞 달
+											Calendar preCal = (Calendar) cal.clone();
+											preCal.add(Calendar.DATE, -(week - 1)); // week-1 = 첫째 주에서 앞 달의 범위
+											int preDate = preCal.get(Calendar.DATE); // -(week-1) = 첫째 주에서 앞 달의 범위만큼 역으로 계산
 
-										out.print("<tr>");
-										// 1일 앞 부분
-										for (int i = 1; i < week; i++) {
-											out.print("<td class='gray'>" + (preDate++) + "</td>");
-										}
-
-										// 1일부터 말일까지 출력
-										int lastDay = cal.getActualMaximum(Calendar.DATE); // 현재 달의 최대 날짜
-										String cls;
-										for (int i = 1; i <= lastDay; i++) {
-											cls = year == ty && month == tm && i == td ? "today" : ""; // 시스템 시간과 날짜가 같으면 cls = today가 된다
-											out.print("<td class='" + cls + "'>" + i + "<br><table><tr><td id='note'>"); // class="today"의 스타일 적용
-
-											//메모(일정) 추가 부분
-											int memoyear, memomonth, memoday;
-											try {
-												// select 문장을 문자열 형태로 구성한다.
-												String sql = "SELECT cmYear, cmMonth, cmDay, cmContents FROM calendarmemo";
-												pstmt = conn.prepareStatement(sql);
-												// select 를 수행하면 데이터 정보가 ResultSet 클래스의 인스턴스로 리턴
-												ResultSet rs = pstmt.executeQuery();
-												while (rs.next()) { // 마지막 데이터까지 반복함.
-											//날짜가 같으면 데이터 출력
-											memoyear = rs.getInt("cmYear");
-											memomonth = rs.getInt("cmMonth");
-											memoday = rs.getInt("cmDay");
-											if (year == memoyear && month + 1 == memomonth + 1 && i == memoday) {
-												out.println(rs.getString("cmContents") + "<br/>");
+											out.print("<tr>");
+											// 1일 앞 부분
+											for (int i = 1; i < week; i++) {
+												out.print("<td class='gray'>" + (preDate++) + "</td>");
 											}
+
+											// 1일부터 말일까지 출력
+											int lastDay = cal.getActualMaximum(Calendar.DATE); // 현재 달의 최대 날짜
+											String cls;
+											for (int i = 1; i <= lastDay; i++) {
+												cls = year == ty && month == tm && i == td ? "today" : ""; // 시스템 시간과 날짜가 같으면 cls = today가 된다
+												out.print("<td class='" + cls + "'>" + i + "<br><table><tr><td id='note'>"); // class="today"의 스타일 적용
+
+												//메모(일정) 추가 부분
+												int memoyear, memomonth, memoday;
+												try {
+													// select 문장을 문자열 형태로 구성한다.
+													String sql = "SELECT cmYear, cmMonth, cmDay, cmContents FROM calendarmemo";
+													pstmt = conn.prepareStatement(sql);
+													// select 를 수행하면 데이터 정보가 ResultSet 클래스의 인스턴스로 리턴
+													ResultSet rs = pstmt.executeQuery();
+													while (rs.next()) { // 마지막 데이터까지 반복함.
+												//날짜가 같으면 데이터 출력
+												memoyear = rs.getInt("cmYear");
+												memomonth = rs.getInt("cmMonth");
+												memoday = rs.getInt("cmDay");
+												if (year == memoyear && month + 1 == memomonth + 1 && i == memoday) {
+													out.println(rs.getString("cmContents") + "<br/>");
 												}
-												rs.close();
-											} catch (Exception e) {
-												System.out.println(e);
-											} ;
+													}
+													rs.close();
+												} catch (Exception e) {
+													System.out.println(e);
+												}
+												;
 
-											out.print("</td></tr></table></td>");
-											if (lastDay != i && (++week) % 7 == 1) {
-												out.print("</tr><tr>");
+												out.print("</td></tr></table></td>");
+												if (lastDay != i && (++week) % 7 == 1) {
+													out.print("</tr><tr>");
+												}
 											}
-										}
 
-										// 마지막 주 마지막 일자 다음 처리
-										int n = 1;
-										for (int i = (week - 1) % 7; i < 6; i++) {
-											out.print("<td class='gray'>" + (n++) + "</td>");
-										}
-										out.print("</tr>");
-										%>
-									</tbody>
-								</table>
+											// 마지막 주 마지막 일자 다음 처리
+											int n = 1;
+											for (int i = (week - 1) % 7; i < 6; i++) {
+												out.print("<td class='gray'>" + (n++) + "</td>");
+											}
+											out.print("</tr>");
+											%>
+										</tbody>
+									</table>
 								</div>
 								<!-- 달력 테스트 -->
 
@@ -181,48 +185,51 @@ if (conn == null) {
 								<div class="product__item__text"></div>
 							</div>
 						</div>
-						<div class="col-6 col-6">
-							<div class="product__item">
+						<div class="col-6 col-6" id="notice">
+							<div class="product__item" >
 								<!-- 공지사항 간단히 보기 -->
 								<p>공지사항</p>
 
-								<table class="table table-striped" style="width: 100%"><thead class="table-light">
-									<tr>
-										<th>번호</th>
-										<th>제목</th>
-										<th>작성자</th>
-										<th>작성일</th>
-									</tr>
-								</thead>
-								<tbody class="table-light">
-									<%
-									NoticeDAO noticeDAO = new NoticeDAO();
-									ArrayList<Notice> list = noticeDAO.getList(pageNumber);
-									for (int i = 0; i < 5; i++) {
-									%>
-									<tr>
-										<td><%=list.get(i).getNoticeID()%></td>
-										<td><%=list.get(i).getNoticeTitle()%></td>
-										<td><%=list.get(i).getAdminID()%></td>
-										<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
+								<table class="table table-striped" style="width: 100%">
+									<thead class="table-light">
+										<tr>
+											<th>번호</th>
+											<th>제목</th>
+											<th>작성자</th>
+											<th>작성일</th>
+										</tr>
+									</thead>
+									<tbody class="table-light">
+										<%
+										NoticeDAO noticeDAO = new NoticeDAO();
+										ArrayList<Notice> list = noticeDAO.getList(pageNumber);
+										for (int i = 0; i < 5; i++) {
+										%>
+										<tr>
+											<td><%=list.get(i).getNoticeID()%></td>
+											<td><%=list.get(i).getNoticeTitle()%></td>
+											<td><%=list.get(i).getAdminID()%></td>
+											<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
 		+ list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>
-									</tr>
+										</tr>
 
-									<%
-									}
-									%>
+										<%
+										}
+										%>
 
-								</tbody>
+									</tbody>
 								</table>
 								<!-- 공지사항 간단히 보기 -->
 							</div>
 						</div>
-						<div class="col-6 col-6">
-							<div class="product__item">
+						<div class="col-6 col-6" id="attmap">
+							<div class="product__item" >
 								<!-- 지도 테스트 -->
 								<div id="map" style="width: 100%; height: 350px;"></div>
-								<button id="atend-btn" style="width: 100%; height: 50px;">출석하기</button>
-								
+								<form action="attendAction.jsp" method="post">
+									<input type="hidden" name="userID" />
+									<button id="atend-btn" style="width: 100%; height: 50px;">출석하기</button>
+								</form>
 								<script src="/resource/js/map.js"></script>
 								<!-- 지도 테스트 -->
 

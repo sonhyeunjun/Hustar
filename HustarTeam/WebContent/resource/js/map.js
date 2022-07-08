@@ -1,21 +1,32 @@
 
-
+//위치 정보 담을 변수 
 var latitude;
 var longitude;
 
-var adminlet = 35.9118965;
-var adminlong = 128.8110347;
+//관리자 위치정보 담기
+var adminlet = 35.912088;
+var adminlong = 128.811257;
 // 35.9120885004617, 128.8112570975471
-//대가대 수업장소35.912088, 128.811257
+//35.8079252, 128.5359119
+//대가대 수업장소35.912088, 128.811257 35.9202816, 128.811008
+var option = {
+	enableHighAccuracy: true,
+	timeout: 5000,
+	maximumAge: 0
+};
 
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+}
 navigator.geolocation
 	.getCurrentPosition(function(pos) {
+
 		console.log(pos);
 		latitude = pos.coords.latitude;
 		longitude = pos.coords.longitude;
 		alert("현재 위치는 : " + latitude
 			+ ", " + longitude);
-	});
+	}, error, option);
 //--
 var mapContainer = document
 	.getElementById('map'), // 지도를 표시할 div 
@@ -32,7 +43,7 @@ var container = document
 var options = { //지도를 생성할 때 필요한 기본 옵션
 	center: new kakao.maps.LatLng(
 		adminlet, adminlong), //지도의 중심좌표.
-		draggable: false,
+	draggable: false,
 	level: 3
 	//지도의 레벨(확대, 축소 정도)
 };
@@ -53,7 +64,7 @@ function setDraggable(draggable) {
 var circle = new kakao.maps.Circle({
 	center: new kakao.maps.LatLng(
 		adminlet, adminlong), // 원의 중심좌표 입니다 
-	radius: 80, // 미터 단위의 원의 반지름입니다 
+	radius: 100, // 미터 단위의 원의 반지름입니다 
 	strokeWeight: 5, // 선의 두께입니다 
 	strokeColor: '#75B8FA', // 선의 색깔입니다
 	strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
@@ -130,17 +141,28 @@ function displayMarker(locPosition) {
 	// 마커와 원의 중심 사이의 거리
 	var dist = line.getLength();
 	// 이 거리가 원의 반지름보다 작거나 같다면
-	if (dist <= radius) {
-		// 해당 marker는 원 안에 있는 것
-		console.log("원안에있습니다");
-		isAttendance = true;
-		document.getElementById("atend-btn").innerText = "출석하기";
+	if ('<%=session.getAttribute("userID") %>' == "null") {
+		
+		document.getElementById("atend-btn").innerText = "로그인후 이용 가능합니다";
 		document.getElementById("atend-btn").disabled = false;
+		
 	} else {
-		console.log("원밖에있습니다")
-		document.getElementById("atend-btn").innerText = "출석범위를 벗어났습니다";
-		document.getElementById("atend-btn").disabled = true;
+		if (dist <= radius) {
+			// 해당 marker는 원 안에 있는 것
+			console.log("원안에있습니다");
+			isAttendance = true;
+			document.getElementById("atend-btn").innerText = "출석하기";
+			document.getElementById("atend-btn").disabled = false;
+		} else {
+			console.log("원밖에있습니다")
+			document.getElementById("atend-btn").innerText = "출석범위를 벗어났습니다";
+			document.getElementById("atend-btn").disabled = true;
+		}
+
+
 	}
+
+
 }
 
 

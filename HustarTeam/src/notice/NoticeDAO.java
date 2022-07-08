@@ -39,7 +39,7 @@ public class NoticeDAO {
 	}
 
 	
-	public int getNext() { //현재서버의 시간을 가져오는 클래스
+	public int getNext() { 
 		String SQL = "SELECT noticeID FROM notice ORDER BY noticeID DESC";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
