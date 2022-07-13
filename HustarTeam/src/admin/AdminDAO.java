@@ -5,7 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class AdminDAO {
+import javax.servlet.http.HttpServletRequest;
+
+public class AdminDAO<ServletRequestAttributes> {
+//----------------------------
+
+//----------------------------
 
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -48,6 +53,6 @@ public class AdminDAO {
 		return -2;
 	}
 	//------------------------------------------
-	
+
 
 }

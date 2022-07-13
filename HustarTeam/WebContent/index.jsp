@@ -1,12 +1,22 @@
+<%@page import="java.net.Inet4Address"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="notice.NoticeDAO"%>
+<%@ page import="attendance.AttendanceDAO"%>
 <%@ page import="notice.Notice"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.util.Calendar"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.net.InetAddress"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%
+request.setCharacterEncoding("UTF-8");
+%>
+<%
+	String userip = Inet4Address.getLocalHost().getHostAddress();
+
+%>
 <%
 int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
 if (request.getParameter("pageNumber") != null) {
@@ -226,7 +236,7 @@ if (conn == null) {
 							<div class="product__item" >
 								<!-- 지도 테스트 -->
 								<div id="map" style="width: 100%; height: 350px;"></div>
-								<form action="attendAction.jsp" method="post">
+								<form action="Attend/attendAction.jsp" method="get">
 									<input type="hidden" name="userID" />
 									<button id="atend-btn" style="width: 100%; height: 50px;">출석하기</button>
 								</form>
