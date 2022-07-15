@@ -46,7 +46,60 @@ int week = cal.get(Calendar.DAY_OF_WEEK); // 1(일)~7(토), 매 월 1일의 요�
 		f.submit();
 	}
 </script>
+<style type="text/css">
+.col-12{
+	margin:0;
+}
 
+.calendar{
+	margin-top : 30px;
+}
+
+.calendar table {
+ 	 border-radius: 20px;
+ 	 background-color: #070720;
+ 	 color: white;
+    margin:auto; 
+    font-family: 'Kanit', sans-serif;
+    
+}
+.calendar table{  width: 100%;	}
+
+ .days {
+  color: white;
+ 
+  font-size: 18px;
+  left: 355px;
+  top: 80px;
+  word-spacing: 35px;
+  font-weight: 600;
+}
+#note{
+	width: 200px;
+	height : 60px;
+}
+
+thead tr td {
+	color:white;
+	text-align:center;
+    line-height: 68.5714px;
+}
+
+td { 
+	padding-left:10px;
+	padding-top:5px;
+}
+
+td:hover {
+ background-color: gray;
+}
+
+.gray {
+	vertical-align:top;
+	color:gray;
+}
+
+</style>
 </head>
 
 
