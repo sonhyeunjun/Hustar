@@ -13,8 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<script>
+		
+	</script>
 	<%
+	String state = request.getParameter("state");
 	String userID = null;
+		AttendanceDAO attendanceDAO = new AttendanceDAO();
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
 	}
@@ -25,7 +30,8 @@
 		script.println("location.href='../index.jsp'");
 		script.println("</script>");
 	} else {
-		AttendanceDAO attendanceDAO = new AttendanceDAO();
+		if(state.equals("n")){ // 출석할때 
+			
         int result = attendanceDAO.in_class(userID);
         if(result  == 1 ){
         	PrintWriter script = response.getWriter();
@@ -33,8 +39,21 @@
     		script.println("alert('출석 완료')");
     		script.println("location.href='../index.jsp'");
     		script.println("</script>");
+        }else{
+        	
+           int result2 = attendanceDAO.out_class(userID);
+            if(result  == 1 ){
+            	PrintWriter script = response.getWriter();
+        		script.println("<script>");
+        		script.println("alert('퇴실 완료')");
+        		script.println("location.href='../index.jsp'");
+        		script.println("</script>");
         }
-	}
+			
+		}
+        
+       
+	}}
 	%>
 	<%
 	/*로직 :

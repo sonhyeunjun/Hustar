@@ -91,8 +91,7 @@ if (conn == null) {
 	rel="stylesheet">
 <!-- css 파일 -->
 <link rel="stylesheet" href="/resource/css/common.css" type="text/css">
-<link rel="stylesheet" href="/resource/css/calendar/calendar.css"
-	type="text/css">
+
 
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=03dc0c1d6af4d7990e0d8728ccb7d5af"></script>
@@ -213,6 +212,8 @@ if (conn == null) {
 										<%
 										NoticeDAO noticeDAO = new NoticeDAO();
 										ArrayList<Notice> list = noticeDAO.getList(pageNumber);
+										
+										if(list.size()>=5){
 										for (int i = 0; i < 5; i++) {
 										%>
 										<tr>
@@ -225,6 +226,20 @@ if (conn == null) {
 
 										<%
 										}
+										}else{
+										for (int i = 0; i < list.size(); i++) {
+										%>
+										
+										<tr>
+											<td><%=list.get(i).getNoticeID()%></td>
+											<td><%=list.get(i).getNoticeTitle()%></td>
+											<td><%=list.get(i).getAdminID()%></td>
+											<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
+		+ list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>
+										</tr>
+
+										<%
+										}}
 										%>
 
 									</tbody>
@@ -238,7 +253,7 @@ if (conn == null) {
 								<div id="map" style="width: 100%; height: 350px;"></div>
 								<form action="Attend/attendAction.jsp" method="get">
 									<input type="hidden" name="userID" />
-									<button id="atend-btn" style="width: 100%; height: 50px;">출석하기</button>
+									<button id="atend-btn" style="width: 100%; height: 50px;" name="state" value="n" onclick="btn_click()">출석하기</button>
 								</form>
 								<script src="/resource/js/map.js"></script>
 								<!-- 지도 테스트 -->

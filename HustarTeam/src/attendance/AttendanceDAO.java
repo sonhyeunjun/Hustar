@@ -60,18 +60,12 @@ public class AttendanceDAO {
 
 	// 출석버튼 클릭시 db에 출석시간을 넣는 출석 클래스
 	public int in_class(String userid) {
-		String yyyy_mm_dd = getDate().substring(0,10);
-
 		
-		String SQL = "INSERT INTO Attendance(seq,userid,date,in) VALUES (?,?,?,NOW())";
+		String SQL = "INSERT INTO Attendance(seq,userid,date,intime) VALUES (?,?,CURDATE(),NOW())";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			
 			pstmt.setInt(1, 0);
 			pstmt.setString(2, userid);
-			pstmt.setString(3, yyyy_mm_dd);
-			
-			
 			return pstmt.executeUpdate();
 		}
 		catch (Exception e) {
@@ -82,9 +76,20 @@ public class AttendanceDAO {
 	// ---------------------------------------
 
 	// 퇴실버튼 클릭시 db에 퇴실시간을 넣는 퇴실 클래스
-	public int out_class() {
-
-		return 0;
+	public int out_class(String userid) {
+		
+		String SQL = "UPDATE Attendance SET outtime = NOW() WHERE userid = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userid);
+			
+			return pstmt.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+		
 	}
 	// --------------------------------------
 
