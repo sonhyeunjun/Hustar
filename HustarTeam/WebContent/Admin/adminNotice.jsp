@@ -31,95 +31,16 @@ if (request.getParameter("pageNumber") != null) {
 	crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
-	<%@ include file="/include/adminHeader.jsp"%>
-	<div id="layoutSidenav">
-		<div id="layoutSidenav_nav">
-			<nav class="sb-sidenav accordion sb-sidenav-dark"
-				id="sidenavAccordion">
-				<div class="sb-sidenav-menu">
-					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Core</div>
-						<a class="nav-link" href="index.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> Dashboard
-						</a>
-						<div class="sb-sidenav-menu-heading">Interface</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseLayouts" aria-expanded="false"
-							aria-controls="collapseLayouts">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> Layouts
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapseLayouts"
-							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="layout-static.html">Static
-									Navigation</a> <a class="nav-link" href="layout-sidenav-light.html">Light
-									Sidenav</a>
-							</nav>
-						</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapsePages" aria-expanded="false"
-							aria-controls="collapsePages">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-book-open"></i>
-							</div> Pages
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapsePages"
-							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav accordion"
-								id="sidenavAccordionPages">
-								<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-									data-bs-target="#pagesCollapseAuth" aria-expanded="false"
-									aria-controls="pagesCollapseAuth"> Authentication
-									<div class="sb-sidenav-collapse-arrow">
-										<i class="fas fa-angle-down"></i>
-									</div>
-								</a>
-								<div class="collapse" id="pagesCollapseAuth"
-									aria-labelledby="headingOne"
-									data-bs-parent="#sidenavAccordionPages">
-									<nav class="sb-sidenav-menu-nested nav">
-										<a class="nav-link" href="login.html">Login</a> <a
-											class="nav-link" href="register.html">Register</a> <a
-											class="nav-link" href="password.html">Forgot Password</a>
-									</nav>
-								</div>
 
-							</nav>
-						</div>
-						<div class="sb-sidenav-menu-heading">Addons</div>
-						<a class="nav-link" href="charts.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-chart-area"></i>
-							</div> 차트
-						</a> <a class="nav-link" href="/Admin/adminNotice.jsp">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-table"></i>
-							</div> 공지사항 관리
-						</a>
-					</div>
-				</div>
-				<div class="sb-sidenav-footer">
-					<div class="small">Logged in as:</div>
-					Hustar Admin
-				</div>
-			</nav>
-		</div>
+		<%@ include file="/include/adminHeader.jsp"%>
+	
+	<%@ include file="/include/adminside.jsp"%>
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
 					<h1 class="mt-4">공지사항</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="index.html">메인</a></li>
+						<li class="breadcrumb-item"><a href="adminMain.jsp">메인</a></li>
 						<li class="breadcrumb-item active">공지사항</li>
 					</ol>
 					<div class="card mb-4">
@@ -161,6 +82,7 @@ if (request.getParameter("pageNumber") != null) {
 							</table>
 						<!-- 페이징 처리 -->
 						<nav aria-label="Page navigation example">
+						<div style="text-align: right;"><a type="button" class="btn btn-light"  href="adminNoticeWrite.jsp">글쓰기</a></div>
 								<ul class="pagination justify-content-center">
 									<%
 									if (pageNumber == 1) {
@@ -215,8 +137,10 @@ if (request.getParameter("pageNumber") != null) {
 									<%
 									}
 									%>
-									<a type="button" class="btn btn-secondary" href="adminNoticeWrite.jsp">공지사항 등록</a>
+									
 								</ul>
+								
+								
 							</nav>
 						
 						
