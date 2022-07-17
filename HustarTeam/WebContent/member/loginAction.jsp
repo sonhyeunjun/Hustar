@@ -14,6 +14,7 @@
 </head>
 <body>
 	<%
+		
 		String userID =null;
 		if(session.getAttribute("userID") != null){
 			userID = (String)session.getAttribute("userID");
@@ -28,6 +29,13 @@
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword());
 		if(result == 1){
+		Cookie c = new Cookie("att", "att_before");
+		System.out.println("att "+ c.getValue());
+		c.setComment("출석정보") ;// 쿠키 유효기간을 설정한다. 초단위 : 60*60*24= 1일 
+		c.setMaxAge(60*60*20) ;// 쿠키에 설명을 추가한다
+		c.setHttpOnly(true);
+		c.setPath("/");
+		response.addCookie(c);
 			session.setAttribute("userID", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");

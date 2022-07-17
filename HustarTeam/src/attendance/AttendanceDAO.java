@@ -61,11 +61,11 @@ public class AttendanceDAO {
 	// 출석버튼 클릭시 db에 출석시간을 넣는 출석 클래스
 	public int in_class(String userid) {
 		
-		String SQL = "INSERT INTO Attendance(seq,userid,date,intime) VALUES (?,?,CURDATE(),NOW())";
+		String SQL = "INSERT INTO Attendance(userid,date,intime) VALUES (?,CURDATE(),NOW())";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, 0);
-			pstmt.setString(2, userid);
+			
+			pstmt.setString(1, userid);
 			return pstmt.executeUpdate();
 		}
 		catch (Exception e) {
@@ -99,5 +99,6 @@ public class AttendanceDAO {
 		return 0;
 	}
 	// --------------------------------------------------------
+	//
 
 }

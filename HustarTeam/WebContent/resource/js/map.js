@@ -1,12 +1,14 @@
 
+
 //관리자 위치정보 담기
-var adminlet = 35.9202816;
-var adminlong = 128.811008;
-// 35.8079056, 128.5359287 35.8078733, 128.5360729
-// 35.9120885004617, 128.8112570975471
-//35.8079252, 128.5359119  35.9202816, 128.811008
+var adminlet = 35.8079112; 
+var adminlong = 128.5359771;
+// 35.8079056, 128.5359287 35.8078733, 128.5360729 35.9202816, 128.811008 35.8008179, 128.5375256
+//35.8078447, 128.5358441 35.8079112, 128.5359771
 //대가대 수업장소35.912088, 128.811257 35.9202816, 128.811008
-//35.8078997, 128.5359895 35.9118981, 128.8110367
+//35.8078997,35.8008179, 128.5375256
+// 128.5359895 35.9118981, 128.8110367
+// 35.9118956, 128.8110006
 
 
 //사용자 위치 받아오는 부분 geolocation 사용----
@@ -123,57 +125,38 @@ function displayMarker(locPosition) {
 	var dist = line.getLength();
 
 	// 이 거리가 원의 반지름보다 작거나 같다면
-
-	if ('<%=session.getAttribute("userID") %>' == "null") {
-
-		document.getElementById("atend-btn").innerText = "로그인후 이용 가능합니다";
+           
+	if (dist <= radius) {
+		// 해당 marker는 원 안에 있는 것
+		console.log("원안에있습니다");
+		isAttendance = true;
+		document.getElementById("atend-btn").innerText = "출석하기";
 		document.getElementById("atend-btn").disabled = false;
-
 	} else {
-		//로그인상태일때
-
-		if (localStorage.getItem('in') == 1) {
-			document.getElementById("atend-btn").innerText = "퇴실하기";
-			document.getElementById("atend-btn").value = "1";
-			document.getElementById("atend-btn").disabled = false;
-		} else {
-
-			if (dist <= radius) {
-				// 해당 marker는 원 안에 있는 것
-				console.log("원안에있습니다");
-				document.getElementById("atend-btn").innerText = "출석하기";
-				document.getElementById("atend-btn").disabled = false;
-
-			} else {
-				console.log("원밖에있습니다")
-				document.getElementById("atend-btn").innerText = "출석범위를 벗어났습니다";
-				document.getElementById("atend-btn").disabled = true;
-			}
-
-		}
-
-
-
+		console.log("원밖에있습니다")
+		document.getElementById("atend-btn").innerText = "출석범위를 벗어났습니다";
+		document.getElementById("atend-btn").disabled = true;
 	}
 }
-localStorage.setItem('in', '0');
-localStorage.setItem('out', '0');
-function btn_click() {
+        
 
-	if (localStorage.getItem('in') == 0) {
-		isAttendance = true;
-		localStorage.setItem('in', '1');
+	
+
+
+function btn_click(event) {
+		event.preventDefault();	
+		if (document.getElementById("atend-btn").value == "in") {
+		localStorage.setItem('att', 'att_in');
+		console.log(localStorage.getItem('att'));
 		document.getElementById("atend-btn").innerText = "퇴실하기";
-	} else if(localStorage.getItem('in') == 1) {
-		localStorage.setItem('out', '1');
-		
+		document.getElementById("atend-btn").value = "out";
+	} else if(state == "att_after") {
+		localStorage.setItem('att', 'att_success');
 		document.getElementById("atend-btn").disabled = true;
-
 		setTimeout(function() {
-			document.getElementById("atend-btn").disabled = true;
-			localStorage.setItem('in', '0');
-			localStorage.setItem('out', '0');
+			document.getElementById("atend-btn").disabled = flase;
+			localStorage.setItem('att', 'att_before');
 		}, 1000 * 360 * 10);
 	}
-
 }
+	

@@ -51,7 +51,7 @@
                     <div class="card-body p-md-5 text-black">
                       <h3 class="mb-5 text-uppercase">회원가입</h3>
       
-      					<form method="post" action="/member/registerAction.jsp">
+      					<form method="get" action="/member/registerAction.jsp">
                       	<div class="row">
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
@@ -76,16 +76,13 @@
                         </div>
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                            <input type="text" id="form3Example1n1" class="form-control form-control-lg" name="userPhone" />
+                            <input type="text" id="form3Example1n1" class="form-control form-control-lg" name="userMobile" />
                             <label class="form-label" for="form3Example1n1">전화번호</label>
                           </div>
                         </div>
                       </div>
       
-                      <div class="form-outline mb-4">
-                        <input type="text" id="form3Example8" class="form-control form-control-lg " name="userAddress" />
-                        <label class="form-label" for="form3Example8">주소</label>
-                      </div>
+                     
       
                       <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
       
@@ -122,10 +119,7 @@
                         <label class="form-label" for="form3Example90">대학교</label>
                       </div>
       
-                      <div class="form-outline mb-4">
-                        <input type="text" id="form3Example99" class="form-control form-control-lg" name="userMajor" />
-                        <label class="form-label" for="form3Example99">전공</label>
-                      </div>
+                     
       
                       <div class="form-outline mb-4">
                         <input type="email" id="form3Example97" class="form-control form-control-lg" name="userEmail" />

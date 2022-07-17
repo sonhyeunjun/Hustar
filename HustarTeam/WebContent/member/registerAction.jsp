@@ -10,20 +10,25 @@
 <jsp:setProperty name="user" property="userGender" />
 <jsp:setProperty name="user" property="userBirth" />
 <jsp:setProperty name="user" property="userUniversity" />
-<jsp:setProperty name="user" property="userMajor" />
-<jsp:setProperty name="user" property="userPhone" />
+<jsp:setProperty name="user" property="userMobile" />
 <jsp:setProperty name="user" property="userEmail" />
-<jsp:setProperty name="user" property="userAddress" />
-<jsp:setProperty name="user" property="userAdmin" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>JSP 게시판 웹 사이트</title>
 </head>
-<body>
+<body> 
 	<%
-		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserGender() == null || user.getUserBirth() == null || user.getUserUniversity() == null || user.getUserMajor() == null || user.getUserPhone() == null || user.getUserEmail() == null || user.getUserAddress() == null){			
+		System.out.print(user.getUserID());
+		System.out.print(user.getUserPassword());
+		System.out.print(user.getUserName());
+		System.out.print(user.getUserGender());
+		System.out.print(user.getUserBirth());
+		System.out.print(user.getUserUniversity());
+		System.out.print(user.getUserEmail());
+		System.out.print(user.getUserMobile());
+		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserGender() == null || user.getUserBirth() == null || user.getUserUniversity() == null || user.getUserMobile() == null || user.getUserEmail() == null ){			
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('입력이 안 된 사항이 있습니다.')");

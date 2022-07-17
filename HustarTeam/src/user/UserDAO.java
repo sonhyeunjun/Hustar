@@ -49,30 +49,27 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		String SQL = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
-			pstmt.setString(2, user.getUserPassword());
-			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getUserGender());
-			pstmt.setString(5, user.getUserBirth());
-			pstmt.setString(6, user.getUserUniversity());
-			pstmt.setString(7, user.getUserMajor());
-			pstmt.setString(8, user.getUserPhone());
-			pstmt.setString(9, user.getUserEmail());
-			pstmt.setString(10, user.getUserAddress());
-			pstmt.setInt(11, user.getUserAdmin());
+			pstmt.setString(2, user.getUserName());
+			pstmt.setString(3, user.getUserPassword());
+			pstmt.setString(4, user.getUserMobile());
+			pstmt.setString(5, user.getUserGender());
+			pstmt.setString(6, user.getUserBirth());
+			pstmt.setString(7, user.getUserUniversity());
+			pstmt.setString(8, user.getUserEmail());
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return -1;
 	}
 	
 	// 여기 뭔가 문제가 있다
 	public User get(String userID) {
-		String SQL = "SELECT * FROM BBS WHERE userID = ?";
+		String SQL = "SELECT * FROM user WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
@@ -80,16 +77,13 @@ public class UserDAO {
 			if(rs.next()) {
 				User user = new User();
 				user.setUserID(rs.getString(1));
-				user.setUserPassword(rs.getString(2));
-				user.setUserName(rs.getString(3));
-				user.setUserGender(rs.getString(4));
-				user.setUserBirth(rs.getString(5));
-				user.setUserUniversity(rs.getString(6));
-				user.setUserMajor(rs.getString(7));
-				user.setUserPhone(rs.getString(8));
-				user.setUserEmail(rs.getString(9));
-				user.setUserAddress(rs.getString(10));
-				user.setUserAdmin(rs.getInt(11));
+				user.setUserName(rs.getString(2));
+				user.setUserPassword(rs.getString(3));
+				user.setUserMobile(rs.getString(4));
+				user.setUserGender(rs.getString(5));
+				user.setUserBirth(rs.getString(6));
+				user.setUserUniversity(rs.getString(7));
+				user.setUserEmail(rs.getString(8));
 				
 				System.out.println("user값 받아오기 성공");
 				return user;
@@ -104,20 +98,17 @@ public class UserDAO {
 	}
 	
 	public int update(User user) {
-		String SQL = "UPDATE INTO USER VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "UPDATE INTO USER VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
-			pstmt.setString(2, user.getUserPassword());
-			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getUserGender());
-			pstmt.setString(5, user.getUserBirth());
-			pstmt.setString(6, user.getUserUniversity());
-			pstmt.setString(7, user.getUserMajor());
-			pstmt.setString(8, user.getUserPhone());
-			pstmt.setString(9, user.getUserEmail());
-			pstmt.setString(10, user.getUserAddress());
-			pstmt.setInt(11, user.getUserAdmin());
+			pstmt.setString(2, user.getUserName());
+			pstmt.setString(3, user.getUserPassword());
+			pstmt.setString(4, user.getUserMobile());
+			pstmt.setString(5, user.getUserGender());
+			pstmt.setString(6, user.getUserBirth());
+			pstmt.setString(7, user.getUserUniversity());
+			pstmt.setString(8, user.getUserEmail());
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("업데이트 실패");

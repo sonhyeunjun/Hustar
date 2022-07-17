@@ -1,4 +1,4 @@
-<%@page import="java.net.Inet4Address"%>
+<%@page import="javax.servlet.http.Cookie"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
@@ -13,10 +13,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
-<%
-	String userip = Inet4Address.getLocalHost().getHostAddress();
 
-%>
 <%
 int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
 if (request.getParameter("pageNumber") != null) {
@@ -79,9 +76,7 @@ if (conn == null) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>Hustar | Template</title>
-
-
+<title>메인페이지</title>
 <!-- Google Font -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
@@ -95,6 +90,27 @@ if (conn == null) {
 
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=03dc0c1d6af4d7990e0d8728ccb7d5af"></script>
+<%
+String id = (String) session.getAttribute("userID");
+String name = "";
+String value = "";
+String cookie = request.getHeader("Cookie");
+if(cookie != null){
+Cookie[] cookies = request.getCookies() ;
+	
+	for(int i=0; i < cookies.length; i++){
+		if(cookies[i].getName().equals("att")){
+		
+		name = cookies[i].getName();// 저장된 쿠키 이름을 가져온다
+		value = cookies[i].getValue() ;// 쿠키값을 가져온다
+		}
+	System.out.println(name);
+	System.out.println(value);		
+	}
+	
+}
+%>
+
 </head>
 <body>
 
@@ -102,6 +118,7 @@ if (conn == null) {
 	<header>
 		<%@ include file="/include/header.jsp"%>
 	</header>
+	
 
 
 	<!-- 내용11  -->
@@ -195,7 +212,7 @@ if (conn == null) {
 							</div>
 						</div>
 						<div class="col-6 col-6" id="notice">
-							<div class="product__item" >
+							<div class="product__item">
 								<!-- 공지사항 간단히 보기 -->
 								<p>공지사항</p>
 
@@ -212,9 +229,9 @@ if (conn == null) {
 										<%
 										NoticeDAO noticeDAO = new NoticeDAO();
 										ArrayList<Notice> list = noticeDAO.getList(pageNumber);
-										
-										if(list.size()>=5){
-										for (int i = 0; i < 5; i++) {
+
+										if (list.size() >= 5) {
+											for (int i = 0; i < 5; i++) {
 										%>
 										<tr>
 											<td><%=list.get(i).getNoticeID()%></td>
@@ -226,10 +243,10 @@ if (conn == null) {
 
 										<%
 										}
-										}else{
+										} else {
 										for (int i = 0; i < list.size(); i++) {
 										%>
-										
+
 										<tr>
 											<td><%=list.get(i).getNoticeID()%></td>
 											<td><%=list.get(i).getNoticeTitle()%></td>
@@ -239,7 +256,8 @@ if (conn == null) {
 										</tr>
 
 										<%
-										}}
+										}
+										}
 										%>
 
 									</tbody>
@@ -248,12 +266,32 @@ if (conn == null) {
 							</div>
 						</div>
 						<div class="col-6 col-6" id="attmap">
-							<div class="product__item" >
+							<div class="product__item">
 								<!-- 지도 테스트 -->
 								<div id="map" style="width: 100%; height: 350px;"></div>
 								<form action="Attend/attendAction.jsp" method="get">
 									<input type="hidden" name="userID" />
-									<button id="atend-btn" style="width: 100%; height: 50px;" name="state" value="n" onclick="btn_click()">출석하기</button>
+									<%
+									if (id == null) {
+									%>
+									<button id="atend-btn" style="width: 100%; height: 50px;"
+										name="state" disabled="false" onclick="btn_click">로그인
+										후 이용 가능합니다</button>
+									<%
+									} else {
+									%>
+									<%
+									System.out.print("값 확인용 : "+value);
+									if(value.equals("att_succes")){
+									%>
+									<button id="atend-btn" style="width: 100%; height: 50px;" name="state" value="out" >퇴실하기</button>
+									<%	
+									}else if(value.equals("att_before")){
+									%>
+									<button id="atend-btn" style="width: 100%; height: 50px;" name="state" value="in" >출석하기</button>
+									<%
+									}}
+									%>
 								</form>
 								<script src="/resource/js/map.js"></script>
 								<!-- 지도 테스트 -->

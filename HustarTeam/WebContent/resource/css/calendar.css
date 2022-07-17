@@ -1,5 +1,7 @@
 .col-12{
-	margin:0;
+	margin:20px 20px 20px 20px;
+	background-color : #e2facf;
+	border-radius: 30px;
 }
 
 .calendar{
@@ -11,14 +13,14 @@
  	 background-color: #070720;
  	 color: white;
     margin:auto; 
+    font-size : 50px;
     font-family: 'Kanit', sans-serif;
     
 }
 .calendar table{  width: 100%;	}
 
  .days {
-  color: white;
- 
+  color: white; 
   font-size: 18px;
   left: 355px;
   top: 80px;
@@ -31,8 +33,9 @@
 }
 
 thead tr td {
-	color:white;
+	color: green;	
 	text-align:center;
+	font-size : 30px;
     line-height: 68.5714px;
 }
 
