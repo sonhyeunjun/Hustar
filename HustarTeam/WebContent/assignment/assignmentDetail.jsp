@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="asg.AsgDAO"%>
-<%@ page import="asg.Asg"%>
+<%@ page import="assignment.AsgDAO"%>
+<%@ page import="assignment.Asg"%>
 <%@ page import="java.util.*"%>
 
 <%

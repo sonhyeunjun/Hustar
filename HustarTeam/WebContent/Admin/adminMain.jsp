@@ -4,8 +4,8 @@
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="notice.NoticeDAO"%>
 <%@ page import="notice.Notice"%>
-<%@ page import="asg.AsgDAO"%>
-<%@ page import="asg.Asg"%>
+<%@ page import="assignment.AsgDAO"%>
+<%@ page import="assignment.Asg"%>
 <%@ page import="cal.CalDAO"%>
 <%@ page import="cal.Cal"%>
 <%@ page import="java.util.*"%>

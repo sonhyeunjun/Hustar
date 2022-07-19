@@ -1,4 +1,4 @@
-package asg;
+package assignment;
 
 public class Asg {
 	private int asgID;
@@ -44,12 +44,6 @@ public class Asg {
 	}
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
-	}
-	public String getFilename() {
-		return fileName;
-	}
-	public void setFilename(String filename) {
-		this.fileName = filename;
 	}
 	public String getFileRealName() {
 		return fileRealName;

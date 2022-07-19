@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="asg.AsgDAO"%>
-<%@ page import="asg.Asg"%>
+<%@ page import="assignment.AsgDAO"%>
+<%@ page import="assignment.Asg"%>
 <%@ page import="java.util.*"%>
 
-<%
-String userID = null; // 로그인이 된 사람들은 로그인정보를 담을 수 있도록한다
-if (session.getAttribute("userID") != null) {
-	userID = (String) session.getAttribute("userID");
-}
-%>
 <%
 int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
 if (request.getParameter("pageNumber") != null) {
@@ -27,7 +21,7 @@ if (request.getParameter("pageNumber") != null) {
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>과제제출</title>
+<title>과제제출 글 작성</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
@@ -35,16 +29,19 @@ if (request.getParameter("pageNumber") != null) {
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
+
+
+
 </head>
 <body class="sb-nav-fixed">
-	<%@ include file="/include/adminHeader.jsp"%>
-
-	<%@ include file="/include/adminside.jsp"%>
+	<header>
+		<%@ include file="/include/header.jsp"%>
+	</header>
 
 	<div id="layoutSidenav_content">
 		<main>
 			<div class="container-fluid px-4">
-				<h1 class="mt-4">과제제출 등록</h1>
+				<h1 class="mt-4">과제 등록</h1>
 				<ol class="breadcrumb mb-4">
 					<li class="breadcrumb-item active">글쓰기</li>
 				</ol>
@@ -54,13 +51,14 @@ if (request.getParameter("pageNumber") != null) {
 					<!-- 게시판 글쓰기 양식 부분 -->
 					<div class="container">
 						<div class="row">
-							<form method="post" action="assignmentwriteAction.jsp">
-								<table class="table " 
-									style="text-align: center; border: 1px solid #dddddd; padding : 50px">
+							<form action="asgWriteAction.jsp" method="post" enctype="multipart/form-data">
+								<table class="table table-striped"
+									style="text-align: center; border: 1px solid #dddddd">
 									<thead>
 										<tr>
 											<th colspan="2"
-												style="background-color: #eeeeee; text-align: center;">과제제출</th>
+												style="background-color: #eeeeee; text-align: center;">게시판
+												글쓰기 양식</th>
 
 										</tr>
 									</thead>
@@ -73,17 +71,17 @@ if (request.getParameter("pageNumber") != null) {
 											<td><textarea class="form-control" placeholder="글 내용"
 													name="asgContent" maxlength="2048" style="height: 350px"></textarea></td>
 										</tr>
-										<tr>
-											<td><input class="form-control" type="file"
-												id="formFile" name="fileName" ></td>
-										</tr>
 									</tbody>
+
 								</table>
-								<div style="text-align: right;"><button type="submit" class="btn btn-light">글쓰기</button></div>
+								파일: <input type="file" name="asgFile"><br>
+								<input type="submit" class="btn btn-primary pull-right"
+									value="글쓰기">
 							</form>
 						</div>
 						<!-- 게시판 글쓰기 양식 부분 -->
 					</div>
+				</div>
 				</div>
 		</main>
 		<footer class="py-4 bg-light mt-auto">
@@ -95,6 +93,16 @@ if (request.getParameter("pageNumber") != null) {
 		</footer>
 	</div>
 	</div>
+
+	<!-- footer 바닥글-->
+	<%@ include file="/include/footer.jsp"%>
+
+
+	<!-- 검색 -->
+	<%@ include file="/include/search.jsp"%>
+
+
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>

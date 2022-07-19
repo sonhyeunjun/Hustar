@@ -1,4 +1,4 @@
-package asg;
+package assignment;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,8 +28,8 @@ public class AsgDAO {
 		String SQL = "INSERT INTO assignment VALUES (?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, fileName);
-			pstmt.setString(2, fileRealName);
+			pstmt.setString(6, fileName);
+			pstmt.setString(7, fileRealName);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -101,7 +101,7 @@ public class AsgDAO {
 				assignment.setAsgTitle(rs.getString(3));
 				assignment.setAsgDate(rs.getString(4));
 				assignment.setAsgContent(rs.getString(5));
-				assignment.setFilename(rs.getString(6));
+				assignment.setFileName(rs.getString(6));
 				assignment.setFileRealName(rs.getString(7));
 				list.add(assignment);
 			}
@@ -174,7 +174,7 @@ public class AsgDAO {
 				assignment.setAsgTitle(rs.getString(3));
 				assignment.setAsgDate(rs.getString(4));
 				assignment.setAsgContent(rs.getString(5));
-				assignment.setFilename(rs.getString(6));
+				assignment.setFileName(rs.getString(6));
 				assignment.setFileRealName(rs.getString(7));
 
 				return assignment;

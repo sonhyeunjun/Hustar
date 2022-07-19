@@ -46,7 +46,7 @@
 							<ul>
 								<li class="active"><a href="/">메인화면</a></li>
 								 <li><a href="/Board/Boardlist.jsp">공지사항</a></li>
-								<li><a href="/assignment/assignment-send.jsp">과제제출</a></li>
+								<li><a href="/assignment/asgList.jsp">과제제출</a></li>
 								<li><a href="#">출결확인</a></li>
 							</ul>
 						</nav>
