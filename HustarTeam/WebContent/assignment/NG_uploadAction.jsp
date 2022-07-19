@@ -1,4 +1,4 @@
-<%@ page import="assignment.AsgDAO" %>
+<%@ page import="asg.AsgDAO" %>
 <%@ page import="java.io.File" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>

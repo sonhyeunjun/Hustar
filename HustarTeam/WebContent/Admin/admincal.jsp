@@ -103,7 +103,7 @@ int week = cal.get(Calendar.DAY_OF_WEEK); // 1(일)~7(토), 매 월 1일의 요�
 }
 
 thead tr td {
-	color: white;
+	color: black;
 	text-align: center;
 	line-height: 68.5714px;
 }
@@ -113,13 +113,19 @@ td {
 	padding-top: 5px;
 }
 
-td:hover {
-	background-color: gray;
-}
+td
 
 .gray {
 	vertical-align: top;
 	color: gray;
+}
+
+.td:nth-child(7n+1), .td:nth-child(7n+1) {
+	color: #D13E3E;
+}
+
+.td:nth-child(7n), .td:nth-child(7n) {
+	color: #396EE2;
 }
 </style>
 </head>
@@ -143,8 +149,8 @@ td:hover {
 					<div class="card-header">
 						<i class="fas fa-table me-1"></i> 일정관리
 					</div>
-					<div class="card-body">
-						<div class="col-12" id="calendar">
+					<div class="card-body row">
+						<div class="col-md-6" id="calendar">
 							<div>
 								<!-- 달력 테스트 -->
 								<div>
@@ -221,8 +227,53 @@ td:hover {
 								</div>
 							</div>
 						</div>
+						<div class="col-md-6">
+							<form action="insertMemo.jsp" method="post">
+								<div class="memo">
+
+									<select name="inyear">
+										<%
+										for (int i = year - 5; i <= year + 5; i++) {
+										%>
+										<option value="<%=i%>"
+											<%=year == i ? "selected='selected'" : ""%>><%=i%>년
+										</option>
+										<%
+										}
+										%>
+									</select> <select name="inmonth">
+										<%
+										for (int i = 1; i <= 12; i++) {
+										%>
+										<option value="<%=i%>"
+											<%=month == i ? "selected='selected'" : ""%>><%=i%>월
+										</option>
+										<%
+										}
+										%>
+									</select> <select name="inday">
+										<%
+										for (int i = 1; i <= lastDay; i++) {
+										%>
+										<option value="<%=i%>"
+											<%=td == i ? "selected='selected'" : ""%>><%=i%>일
+										</option>
+										<%
+										}
+										%>
+									</select><br /> <br /> <label>메모</label> <input type="text"
+										name="incontents" /><br /> <br />
+									<button type="submit">저장</button>
+								</div>
+							</form>
+						</div>
+						<div>
+								
+						</div>
 					</div>
-		</main>
+		</main> 
+		
+		
 
 		<footer class="py-4 bg-light mt-auto">
 			<div class="container-fluid px-4">

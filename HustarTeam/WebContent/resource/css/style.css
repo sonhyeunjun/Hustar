@@ -1003,7 +1003,7 @@ ol {
 }
 
 .anime__details__title h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 13px;
 }
@@ -1279,7 +1279,7 @@ ol {
 .anime__details__episodes a {
 	display: inline-block;
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	background: rgba(255, 255, 255, 0.2);
 	padding: 10px 20px;
 	border-radius: 4px;
@@ -1305,7 +1305,7 @@ ol {
 
 .breadcrumb__links a {
 	font-size: 15px;
-	color: #ffffff;
+	color: #000000;
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;

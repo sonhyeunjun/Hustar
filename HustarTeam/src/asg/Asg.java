@@ -1,4 +1,4 @@
-package assignment;
+package asg;
 
 public class Asg {
 	private int asgID;

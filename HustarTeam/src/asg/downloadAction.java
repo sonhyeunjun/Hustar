@@ -1,4 +1,4 @@
-package assignment;
+package asg;
 
 import java.io.File;
 import java.io.FileInputStream;

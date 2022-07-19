@@ -27,7 +27,7 @@ if (request.getParameter("pageNumber") != null) {
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Dashboard - SB Admin</title>
+<title>과제제출</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
@@ -37,62 +37,63 @@ if (request.getParameter("pageNumber") != null) {
 <meta charset="UTF-8">
 </head>
 <body class="sb-nav-fixed">
-		<%@ include file="/include/adminHeader.jsp"%>
-	
-	<%@ include file="/include/adminside.jsp"%>
-	
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
-					<h1 class="mt-4">공지사항 등록</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">글쓰기 </li>
-					</ol>
-					
-					<div class="card mb-4">
-					
-						<!-- 게시판 글쓰기 양식 부분 -->
-						<div class="container">
-							<div class="row">
-								<form method="post" action="adminNoticewriteAction.jsp">
-									<table class="table table-striped"
-										style="text-align: center; border: 1px solid #dddddd">
-										<thead>
-											<tr>
-												<th colspan="2"
-													style="background-color: #eeeeee; text-align: center;">게시판
-													글쓰기 양식</th>
+	<%@ include file="/include/adminHeader.jsp"%>
 
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><input type="text" class="form-control"
-													placeholder="글 제목" name="noticeTitle" maxlength="50"></td>
-											</tr>
-											<tr>
-												<td><textarea class="form-control" placeholder="글 내용"
-														name="noticeContent" maxlength="2048" style="height: 350px"></textarea></td>
-											</tr>
-										</tbody>
-									</table>
-									<input type="submit" class="btn btn-primary pull-right"
-										value="글쓰기">
-								</form>
-							</div>
-							<!-- 게시판 글쓰기 양식 부분 -->
+	<%@ include file="/include/adminside.jsp"%>
+
+	<div id="layoutSidenav_content">
+		<main>
+			<div class="container-fluid px-4">
+				<h1 class="mt-4">과제제출 등록</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">글쓰기</li>
+				</ol>
+
+				<div class="card mb-4">
+
+					<!-- 게시판 글쓰기 양식 부분 -->
+					<div class="container">
+						<div class="row">
+							<form method="post" action="assignmentwriteAction.jsp">
+								<table class="table " 
+									style="text-align: center; border: 1px solid #dddddd; padding : 50px">
+									<thead>
+										<tr>
+											<th colspan="2"
+												style="background-color: #eeeeee; text-align: center;">과제제출</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control"
+												placeholder="글 제목" name="asgTitle" maxlength="50"></td>
+										</tr>
+										<tr>
+											<td><textarea class="form-control" placeholder="글 내용"
+													name="asgContent" maxlength="2048" style="height: 350px"></textarea></td>
+										</tr>
+										<tr>
+											<td><input class="form-control" type="file"
+												id="formFile" name="fileName" ></td>
+										</tr>
+									</tbody>
+								</table>
+								<div style="text-align: right;"><button type="submit" class="btn btn-light">글쓰기</button></div>
+							</form>
 						</div>
-					</div>
-			</main>
-			<footer class="py-4 bg-light mt-auto">
-				<div class="container-fluid px-4">
-					<div
-						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2022</div>
+						<!-- 게시판 글쓰기 양식 부분 -->
 					</div>
 				</div>
-			</footer>
-		</div>
+		</main>
+		<footer class="py-4 bg-light mt-auto">
+			<div class="container-fluid px-4">
+				<div class="d-flex align-items-center justify-content-between small">
+					<div class="text-muted">Copyright &copy; Your Website 2022</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

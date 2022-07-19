@@ -1,6 +1,6 @@
-const writeForm = window.document.body.querySelector('[rel="write-form"]');
+const modifyForm = window.document.body.querySelector('[rel="modify-form"]');
 
-ClassicEditor.create(writeForm['content'], {
+ClassicEditor.create(modifyForm['content'], {
     toolbar: {
         items: [
             'heading',

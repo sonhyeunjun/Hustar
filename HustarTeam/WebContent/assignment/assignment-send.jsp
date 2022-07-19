@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="assignment.AsgDAO"%>
-<%@ page import="assignment.Asg"%>
+<%@ page import="asg.AsgDAO"%>
+<%@ page import="asg.Asg"%>
 <%@ page import="java.util.*"%>
 
 
@@ -101,85 +101,88 @@
 											<%
 											AsgDAO asgDAO = new AsgDAO();
 											ArrayList<Asg> list = asgDAO.getList(pageNumber);
-											for (int i = 0; i < list.size(); i++) 
-											{
+											for (int i = 0; i < list.size(); i++) {
 											%>
 											<tr>
 												<td><%=list.get(i).getAsgID()%></td>
-												<td><%=list.get(i).getAsgTitle()%></td>
+												<td><a
+													href="assignmentDetail.jsp?asgID=<%=list.get(i).getAsgID()%>"><%=list.get(i).getAsgTitle()%></a></td>
+
 												<td><%=list.get(i).getUserID()%></td>
 												<td><%=list.get(i).getAsgDate().substring(0, 11) + list.get(i).getAsgDate().substring(11, 13) + "시"
-												+ list.get(i).getAsgDate().substring(14, 16) + "분"%></td>
+		+ list.get(i).getAsgDate().substring(14, 16) + "분"%></td>
 											</tr>
 
-											<%} %>
-										
+											<%
+											}
+											%>
+
 										</tbody>
 									</table>
-									
+
 									<div class="product__pagination1" style="text-align: right;">
 										<button type="button" class="btn btn-light"
 											onclick="location.href='/Board/BoardWrite.jsp'">글쓰기</button>
 									</div>
 									<nav aria-label="Page navigation example">
-								<ul class="pagination justify-content-center">
-									<%
-									if (pageNumber == 1) {
-									%>
-									<li class="page-item disabled"><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
-									<%
-									} else {
-									%>
-									<li class="page-item"><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
-									<%
-									}
-									%>
-									<%
-									int count = asgDAO.getCount();
-									int totalPage = count / 5;
-									if (count % 5 != 0) {
-										totalPage += 1;
-									}
+										<ul class="pagination justify-content-center">
+											<%
+											if (pageNumber == 1) {
+											%>
+											<li class="page-item disabled"><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
+											<%
+											} else {
+											%>
+											<li class="page-item"><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=pageNumber - 1%>">이전</a></li>
+											<%
+											}
+											%>
+											<%
+											int count = asgDAO.getCount();
+											int totalPage = count / 5;
+											if (count % 5 != 0) {
+												totalPage += 1;
+											}
 
-									for (int i = 1; i <= totalPage; i++) {
-									%>
-									<%
-									if (pageNumber == i) {
-									%>
+											for (int i = 1; i <= totalPage; i++) {
+											%>
+											<%
+											if (pageNumber == i) {
+											%>
 
-									<li class="page-item active"><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
-									<%
-									} else {
-									%>
-									<li class="page-item"><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
-									<%
-									}
-									%>
-									<%
-									}
-									%>
+											<li class="page-item active"><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
+											<%
+											} else {
+											%>
+											<li class="page-item"><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=i%>"><%=i%> </a></li>
+											<%
+											}
+											%>
+											<%
+											}
+											%>
 
 
-									<%
-									if (pageNumber == totalPage) {
-									%>
-									<li class="page-item disabled"><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
-									<%
-									} else {
-									%>
-									<li class="page-item "><a class="page-link"
-										href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
-									<%
-									}
-									%>
+											<%
+											if (pageNumber == totalPage) {
+											%>
+											<li class="page-item disabled"><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
+											<%
+											} else {
+											%>
+											<li class="page-item "><a class="page-link"
+												href="Boardlist.jsp?pageNumber=<%=pageNumber + 1%>">다음</a></li>
+											<%
+											}
+											%>
 
-								</ul>
-							</nav>
+										</ul>
+									</nav>
 								</div>
 							</div>
 						</div>
@@ -187,7 +190,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</section>
 
 	<!-- footer 바닥글-->

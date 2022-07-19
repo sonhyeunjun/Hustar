@@ -26,20 +26,7 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="/resource/css/bootstrap.min.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/font-awesome.min.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/elegant-icons.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/plyr.css" type="text/css">
-<link rel="stylesheet" href="/resource/css/nice-select.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/owl.carousel.min.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/slicknav.min.css"
-	type="text/css">
-<link rel="stylesheet" href="/resource/css/style.css" type="text/css">
+<link rel="stylesheet" href="/resource/css/common.css" type="text/css">
 </head>
 
 <body>
@@ -106,7 +93,8 @@
 											%>
 											<tr>
 												<td><%=list.get(i).getNoticeID()%></td>
-												<td><%=list.get(i).getNoticeTitle()%></td>
+												<td><a
+											href="/Board/Boarddetail.jsp?noticeID=<%=list.get(i).getNoticeID()%>"><%=list.get(i).getNoticeTitle()%></a></td>
 												<td><%=list.get(i).getAdminID()%></td>
 												<td><%=list.get(i).getNoticeDate().substring(0, 11) + list.get(i).getNoticeDate().substring(11, 13) + "시"
 												+ list.get(i).getNoticeDate().substring(14, 16) + "분"%></td>

@@ -7,19 +7,19 @@
 				<div class="sb-sidenav-menu">
 					<div class="nav">
 						<div class="sb-sidenav-menu-heading">메인</div>
-						<a class="nav-link" href="adminNotice.jsp">
+						<a class="nav-link" href="/Admin/adminNotice.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 공지사항 관리
-						</a> <a class="nav-link" href="adminattend.jsp">
+						</a> <a class="nav-link" href="/Admin/adminattend.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 출석부
-						</a> <a class="nav-link" href="admincal.jsp">
+						</a> <a class="nav-link" href="/Admin/admincal.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 일정관리
-						</a> <a class="nav-link" href="adminhome.jsp">
+						</a> <a class="nav-link" href="/Admin/adminhome.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 과제제출

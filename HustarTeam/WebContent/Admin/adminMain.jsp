@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="notice.NoticeDAO"%>
 <%@ page import="notice.Notice"%>
+<%@ page import="asg.AsgDAO"%>
+<%@ page import="asg.Asg"%>
+<%@ page import="cal.CalDAO"%>
+<%@ page import="cal.Cal"%>
 <%@ page import="java.util.*"%>
 
 <%
@@ -89,7 +94,8 @@ if (request.getParameter("pageNumber") != null) {
 							</tbody>
 						</table>
 						<div class="card text-center opacity-75">
-							<a href="adminNotice.jsp" class="btn btn-light text-center">더 보기</a>
+							<a href="adminNotice.jsp" class="btn btn-light text-center">더
+								보기</a>
 						</div>
 
 					</div>
@@ -107,7 +113,37 @@ if (request.getParameter("pageNumber") != null) {
 						<i class="fas fa-chart-bar me-1"></i> 일정관리
 					</div>
 					<div class="card-body">
-						<canvas id="myBarChart" width="100%" height="40"></canvas>
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th>번호</th>
+									<th>날짜</th>
+									<th>수업 명</th>
+								</tr>
+							</thead>
+							<tbody class="table-light">
+								<%
+								CalDAO calDAO = new CalDAO();
+								ArrayList<Cal> list2 = calDAO.getList(pageNumber);
+								for (int i = 0; i < list2.size(); i++) {
+								%>
+								<tr>
+									<td><%=list2.get(i).getCalID()%></td>
+									<td><%=list2.get(i).getCmYear() + "년" + list2.get(i).getCmMonth() + "월" + list2.get(i).getCmDay() + "일"%></td>
+									<td><%=list2.get(i).getCmContents() %></td>
+
+								</tr>
+
+								<%
+								}
+								%>
+
+							</tbody>
+						</table>
+						<div class="card text-center opacity-75">
+							<a href="admincal.jsp" class="btn btn-light text-center">더
+								보기</a>
+						</div>
 					</div>
 				</div>
 				<div class="card mb-4">
@@ -115,7 +151,39 @@ if (request.getParameter("pageNumber") != null) {
 						<i class="fas fa-chart-bar me-1"></i> 과제제출
 					</div>
 					<div class="card-body">
-						<canvas id="myBarChart" width="100%" height="40"></canvas>
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th>번호</th>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>작성일</th>
+								</tr>
+							</thead>
+							<tbody class="table-light">
+								<%
+								AsgDAO asgDAO = new AsgDAO();
+								ArrayList<Asg> list1 = asgDAO.getList(pageNumber);
+								for (int i = 0; i < list1.size(); i++) {
+								%>
+								<tr>
+									<td><%=list1.get(i).getAsgID()%></td>
+									<td><%=list1.get(i).getAsgTitle()%></td>
+									<td><%=list1.get(i).getAsgContent()%></td>
+									<td><%=list1.get(i).getAsgDate().substring(0, 11) + list1.get(i).getAsgDate().substring(11, 13) + "시"
+		+ list1.get(i).getAsgDate().substring(14, 16) + "분"%></td>
+								</tr>
+
+								<%
+								}
+								%>
+
+							</tbody>
+						</table>
+						<div class="card text-center opacity-75">
+							<a href="adminhome.jsp" class="btn btn-light text-center">더
+								보기</a>
+						</div>
 					</div>
 				</div>
 

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="notice.NoticeDAO"%>
-<%@ page import="notice.Notice"%>
+<%@ page import="asg.AsgDAO"%>
+<%@ page import="asg.Asg"%>
 <%@ page import="java.util.*"%>
+
 
 <%
 int pageNumber = 1; // 기본페이지 기본적으로 페이지 1부터 시작하므로
@@ -54,16 +55,35 @@ if (request.getParameter("pageNumber") != null) {
 									<tr>
 										<th>번호</th>
 										<th>이름</th>
-										<th>출석</th>
-										<th>마감</th>
+										<th>제출</th>
+										<th>제출시간</th>
 									</tr>
 								</thead>
-								<tbody class="table-light">
-									
+							<tbody class="table-light">
+											<%
+											AsgDAO asgDAO = new AsgDAO();
+											ArrayList<Asg> list = asgDAO.getList(pageNumber);
+											for (int i = 0; i < list.size(); i++) {
+											%>
+											<tr>
+												<td><%=list.get(i).getAsgID()%></td>
+												<td><a
+													href="/assignment/assignmentDetail.jsp?asgID=<%=list.get(i).getAsgID()%>"><%=list.get(i).getAsgTitle()%></a></td>
 
-								</tbody>
+												<td><%=list.get(i).getUserID()%></td>
+												<td><%=list.get(i).getAsgDate().substring(0, 11) + list.get(i).getAsgDate().substring(11, 13) + "시"
+		+ list.get(i).getAsgDate().substring(14, 16) + "분"%></td>
+											</tr>
+
+											<%
+											}
+											%>
+
+										</tbody>
 							</table>
+							<div style="text-align: right;"><a type="button" class="btn btn-light"  href="/assignment/assignmentWrite.jsp">글쓰기</a></div>
 						</div>
+						
 					</div>
 				</div>
 			</main>
