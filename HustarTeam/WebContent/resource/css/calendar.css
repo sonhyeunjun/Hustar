@@ -44,7 +44,7 @@ td {
 	padding-top:5px;
 }
 
-td:hover {
+.calendaronly td:hover {
  background-color: gray;
 }
 

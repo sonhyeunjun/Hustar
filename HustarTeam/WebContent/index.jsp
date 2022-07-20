@@ -129,7 +129,7 @@ Cookie[] cookies = request.getCookies() ;
 				<div class="product__page__content">
 					<div class="row">
 						<div class="col-12" id="calendar">
-							<div>
+							<div class="calendaronly">
 								<!-- 달력 테스트 -->
 								<div>
 									<table>
