@@ -1789,7 +1789,7 @@ Board Write
 }
 
 .login__form h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
@@ -1869,7 +1869,7 @@ Board Write
 }
 
 .login__register h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
