@@ -53,7 +53,7 @@
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Password" name="userPassword">
+                                <input type="password" placeholder="Password" name="userPassword">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn" onclick="fn_submit(); return false;">로그인 하기</button>

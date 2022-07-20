@@ -64,7 +64,7 @@ public class AttendanceDAO {
 	// 출석버튼 클릭시 db에 출석시간을 넣는 출석 클래스
 	public int in_class(String userid) {
 		
-		String SQL = "INSERT INTO Attendance(userid,date,intime) VALUES (?,CURDATE(),NOW())";
+		String SQL = "INSERT INTO Attendance(userid,date,intime,outtime) VALUES (?,CURDATE(),NOW(),now())";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			

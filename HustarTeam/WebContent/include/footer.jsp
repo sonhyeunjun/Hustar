@@ -35,7 +35,7 @@
             </div>
             <div class="col-lg-3">
                 <p><!-- Link back to Colorlib111 can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved   by <a href="#" target="_blank">hello</a>
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved   by <a href="/Admin/adminMain.jsp" target="_blank">adminPage</a>
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
               </div>
