@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="notice.NoticeDAO"%>
-<%@ page import="notice.Notice"%>
+<%@ page import="attendance.AttendanceDAO"%>
+<%@ page import="attendance.Attendance"%>
 <%@ page import="java.util.*"%>
 
 <%
@@ -33,50 +33,81 @@ if (request.getParameter("pageNumber") != null) {
 <body class="sb-nav-fixed">
 
 	<%@ include file="/include/adminHeader.jsp"%>
-	
+
 	<%@ include file="/include/adminside.jsp"%>
-	
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
-					<h1 class="mt-4">출석 관리</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="adminMain.jsp">메인</a></li>
-						<li class="breadcrumb-item active">출석</li>
-					</ol>
-					<div class="card mb-4">
-						<div class="card-header">
-							<i class="fas fa-table me-1"></i> 출석
-						</div>
-						<div class="card-body">
-							<table class="table">
-								<thead class="thead-dark">
-									<tr>
-										<th>번호</th>
-										<th>이름</th>
-										<th>출석</th>
-										<th>마감</th>
-									</tr>
-								</thead>
-								<tbody class="table-light">
+
+	<div id="layoutSidenav_content">
+		<main>
+			<div class="container-fluid px-4">
+				<h1 class="mt-4">출석 관리</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item"><a href="adminMain.jsp">메인</a></li>
+					<li class="breadcrumb-item active">출석</li>
+				</ol>
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-table me-1"></i> 출석
+					</div>
+					<div class="card-body">
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th>번호</th>
+									<th>이름</th>
+									<th>출석</th>
+									<th>퇴근</th>
+									<th>출석/결석</th>
+								</tr>
+							</thead>
+							<tbody class="table-light">
+								<%
+								AttendanceDAO attendanceDAO = new AttendanceDAO();
+								ArrayList<Attendance> list = attendanceDAO.getList(pageNumber);
+								for (int i = 0; i < list.size(); i++) {
+								%>
+								<tr>
+									<td><%=list.get(i).getSeq()%>
+									<td><%=list.get(i).getUserid()%></td>
+
+									<td><%=list.get(i).getIn().substring(0, 11) + list.get(i).getIn().substring(11, 13) + "시"
+		+ list.get(i).getIn().substring(14, 16) + "분"%></td>
+									<td><%=list.get(i).getOut().substring(0, 11) + list.get(i).getOut().substring(11, 13) + "시"
+		+ list.get(i).getOut().substring(14, 16) + "분"%></td>
 									
+									<td>
+									
+									<% 
+									int att = Integer.parseInt(list.get(i).getAtt());
+									if(att == 1 ){
+										out.print("출석");
+									}
+									else{
+										out.print("결석");
+									}
+										%></td>
+									
+									
+								</tr>
 
-								</tbody>
-							</table>
-						</div>
+								<%
+								}
+								%>
+
+							</tbody>
+						</table>
 					</div>
 				</div>
-			</main>
-			<footer class="py-4 bg-light mt-auto">
-				<div class="container-fluid px-4">
-					<div
-						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2022</div>
+			</div>
+		</main>
+		<footer class="py-4 bg-light mt-auto">
+			<div class="container-fluid px-4">
+				<div class="d-flex align-items-center justify-content-between small">
+					<div class="text-muted">Copyright &copy; Your Website 2022</div>
 
-					</div>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
+	</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

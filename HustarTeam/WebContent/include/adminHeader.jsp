@@ -24,15 +24,48 @@
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <%
+                    
+                    %>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">환경설정</a></li>
                         <li><a class="dropdown-item" href="#!">활동 로그</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="adminLogout.jsp">로그아웃</a></li>
                     </ul>
+                    
                 </li>
             </ul>
         </nav>
 <!-- 상단 바 부분 -->
 </body>
 </html>
+
+<%
+				//세션
+					String SESSION_ID = (String) session.getAttribute("SessionUserID");
+				//로그인하지 않았기
+					if( SESSION_ID  == null){
+				%>
+				<div class="col-lg-2">
+					<div class="header__right">
+						<!-- 검색하기 -->
+						 <a href="https://www.youtube.com/channel/UCDnykcJVR0hIrG98YvF8lKg " target='_blank'><span class="social_youtube"></span></a>
+                        <a href="/member/login.jsp"><span class="icon_profile"></span></a>	
+
+					</div>
+				</div>
+				<%
+					}else{
+				%>
+					<div class="col-lg-2">
+					<div class="header__right">
+						<!-- 검색하기 -->
+						<a href="/member/logout.jsp"><span class="icon_lock-open"></span></a>
+                        <a href="/member/registerModify.jsp"><%=SESSION_ID %>님<span class="icon_profile"></span></a>	
+                        
+					</div>
+				</div>
+				<% 	
+					}
+				%>

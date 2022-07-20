@@ -6,6 +6,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
+<%@ include file="/include/dbcon.jsp" %>
 <jsp:useBean id="user" class="user.User" scope="page"></jsp:useBean>
 <jsp:setProperty name="user" property="userID" />
 <!DOCTYPE html>
@@ -67,19 +68,23 @@ request.setCharacterEncoding("UTF-8");
 		} else if (state.equals("out")){ // 퇴실
 
 			int result2 = attendanceDAO.out_class(userID);
-			if (result2 == 1) {
+			int result3 = attendanceDAO.att_decision(userID);
+			if (result2 == 1 ) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('퇴실 완료')");
 		script.println("location.href='../index.jsp'");
 		script.println("</script>");
 			}
+		
 
 		}
+	
 
 	}
 	%>
-	<%
+
+<%
 	/*로직 :
 		-원안에 있으면 버튼활성화 
 		-버튼 클릭시 로그인 되어있는지 확인후

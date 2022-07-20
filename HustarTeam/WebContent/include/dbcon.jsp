@@ -6,7 +6,7 @@
 <%
 PreparedStatement pstmt = null;
 String dbDriver = "com.mysql.cj.jdbc.Driver"; //JDBC 드라이버의 클래스 경로
-String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1"; //접속하려는 데이터베이스의 정보
+String dbURL = "jdbc:mysql://database1.chfhjyvwugph.ap-northeast-2.rds.amazonaws.com/database1";
 String dbID = "root";
 String dbPassword = "Thsguswns";
 

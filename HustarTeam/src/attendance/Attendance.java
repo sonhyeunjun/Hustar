@@ -4,6 +4,7 @@ public class Attendance {
 
 	private int seq;
 	private String userid;
+	private String Date;
 	private String in;
 	private String out;
 	private String att;
@@ -12,6 +13,13 @@ public class Attendance {
 	}
 	public void setSeq(int seq) {
 		this.seq = seq;
+	}
+	
+	public String getDate() {
+		return Date;
+	}
+	public void setDate(String date) {
+		Date = date;
 	}
 	public String getUserid() {
 		return userid;

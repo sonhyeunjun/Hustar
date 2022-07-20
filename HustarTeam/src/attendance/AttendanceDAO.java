@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+
+import cal.Cal;
 
 public class AttendanceDAO {
 	public static String getClientIp(HttpServletRequest req) {
@@ -71,7 +74,7 @@ public class AttendanceDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1;
+		return -1; 
 	}
 	// ---------------------------------------
 
@@ -94,11 +97,56 @@ public class AttendanceDAO {
 	// --------------------------------------
 
 	// 출석 시간과 퇴실시간 을 이용하여 출석 지각 조퇴 결석을 결정하는 클래스
-	public int att_decision() {
-
-		return 0;
+	public int att_decision(String userid) {
+		String SQL ="UPDATE Attendance SET att = 1 where TIMEStampDIFF(minute,intime,outtime) > 480 AND userid = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1,userid);
+			
+			return pstmt.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 	// --------------------------------------------------------
 	//
-
+	public int getNext() { 
+		String SQL = "SELECT seq FROM Attendance ORDER BY seq DESC";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
+			}
+			return 1;//첫번째 게시물인경우
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; //디비오류
+	}
+	public ArrayList<Attendance> getList(int pageNumber){
+		String SQL = "SELECT * FROM Attendance WHERE seq < ?  ORDER BY seq DESC LIMIT 5";
+		ArrayList<Attendance> list = new ArrayList<Attendance>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, getNext() - (pageNumber -1) * 5);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Attendance attendance = new Attendance();
+				attendance.setSeq(rs.getInt(1));
+				attendance.setUserid(rs.getString(2));
+				attendance.setDate(rs.getString(3));
+				attendance.setIn(rs.getString(4));
+				attendance.setOut(rs.getString(5));
+				attendance.setAtt(rs.getString(6));
+		
+				list.add(attendance);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list; //디비오류
+	}
 }
