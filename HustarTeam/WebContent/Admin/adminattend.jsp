@@ -70,9 +70,9 @@ if (request.getParameter("pageNumber") != null) {
 									<td><%=list.get(i).getUserid()%></td>
 
 									<td><%=list.get(i).getIn().substring(0, 11) + list.get(i).getIn().substring(11, 13) + "시"
-		+ list.get(i).getIn().substring(14, 16) + "분"%></td>
+		+ list.get(i).getIn() + "분"%></td>
 									<td><%=list.get(i).getOut().substring(0, 11) + list.get(i).getOut().substring(11, 13) + "시"
-		+ list.get(i).getOut().substring(14, 16) + "분"%></td>
+		+ list.get(i).getOut()+ "분"%></td>
 									
 									<td>
 									

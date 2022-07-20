@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ page import="attendance.AttendanceDAO"%>
+<%@ page import="attendance.Attendance"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="notice.NoticeDAO"%>
 <%@ page import="notice.Notice"%>
@@ -105,7 +106,56 @@ if (request.getParameter("pageNumber") != null) {
 						<i class="fas fa-chart-bar me-1"></i> 출석부
 					</div>
 					<div class="card-body">
-						<canvas id="myBarChart" width="100%" height="40"></canvas>
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th>번호</th>
+									<th>이름</th>
+									<th>출석</th>
+									<th>퇴근</th>
+									<th>출석/결석</th>
+								</tr>
+							</thead>
+							<tbody class="table-light">
+								<%
+								AttendanceDAO attendanceDAO = new AttendanceDAO();
+								ArrayList<Attendance> list3 = attendanceDAO.getList(pageNumber);
+								for (int i = 0; i < list3.size(); i++) {
+								%>
+								<tr>
+									<td><%=list3.get(i).getSeq()%>
+									<td><%=list3.get(i).getUserid()%></td>
+
+									<td><%=list3.get(i).getIn().substring(0, 11) + list3.get(i).getIn().substring(11, 13) + "시"
+		+ list3.get(i).getIn().substring(14, 16) + "분"%></td>
+									<td><%=list3.get(i).getOut().substring(0, 11) + list3.get(i).getOut().substring(11, 13) + "시"
+		+ list3.get(i).getOut().substring(14, 16) + "분"%></td>
+									
+									<td>
+									
+									<% 
+									int att = Integer.parseInt(list3.get(i).getAtt());
+									if(att == 1 ){
+										out.print("출석");
+									}
+									else{
+										out.print("결석");
+									}
+										%></td>
+									
+									
+								</tr>
+
+								<%
+								}
+								%>
+
+							</tbody>
+						</table>
+						<div class="card text-center opacity-75">
+							<a href="adminattend.jsp" class="btn btn-light text-center">더
+								보기</a>
+						</div>
 					</div>
 				</div>
 				<div class="card mb-4">
