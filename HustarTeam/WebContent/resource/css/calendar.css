@@ -1,6 +1,6 @@
 .col-12{
 	margin:20px 20px 20px 20px;
-	background-color : #e2facf;
+	background-color : #070720;
 	border-radius: 30px;
 }
 
@@ -30,18 +30,20 @@
 #note{
 	width: 200px;
 	height : 60px;
+	color: white;
 }
 
 thead tr td {
-	color: green;	
+	color: white;
 	text-align:center;
-	font-size : 30px;
+	font-size : 18px;
     line-height: 68.5714px;
 }
 
 td { 
 	padding-left:10px;
 	padding-top:5px;
+	color: white;
 }
 
 .calendaronly td:hover {

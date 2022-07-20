@@ -184,7 +184,7 @@ ol {
 .site-btn {
 	font-size: 13px;
 	color: #ffffff;
-	background: #25f57d;
+	background: #006c1b;
 	font-weight: 700;
 	border: none;
 	border-radius: 2px;
@@ -192,6 +192,15 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 12px 30px;
+}
+
+#atend-btn {
+	margin-top:5px;
+	border-radius:10px;
+}
+
+#map {
+	border-radius:10px;
 }
 
 /* Preloder */
@@ -644,12 +653,24 @@ ol {
 	margin-bottom: 50px;
 }
 
+.table-top {
+	font-size:28px;
+	text-align:center;
+	border: 1px solid black;
+	border-radius:10px;
+	margin-bottom:5px;
+}
+
 .recent__product {
 	margin-bottom: 50px;
 }
 
 .product__item {
 	margin-bottom: 30px;
+}
+
+.product__item td {
+	color:black;
 }
 
 .product__item__pic {
@@ -1778,6 +1799,7 @@ Board Write
 	position: relative;
 	width: 370px;
 	margin-bottom: 20px;
+	border:0.5px solid black;
 }
 
 .login__form form .input__item:before {
@@ -1835,7 +1857,7 @@ Board Write
 
 .login__form .forget_pass {
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	display: inline-block;
 	position: absolute;
 	right: 60px;

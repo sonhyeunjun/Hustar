@@ -135,13 +135,13 @@ Cookie[] cookies = request.getCookies() ;
 									<table>
 										<thead>
 											<tr class="days">
-												<td>일</td>
-												<td>월</td>
-												<td>화</td>
-												<td>수</td>
-												<td>목</td>
-												<td>금</td>
-												<td>토</td>
+												<td>Sunday</td>
+												<td>Monday</td>
+												<td>Tuesday</td>
+												<td>Wednesday</td>
+												<td>Thursday</td>
+												<td>Friday</td>
+												<td>Saturday</td>
 											</tr>
 										</thead>
 										<tbody>
@@ -214,12 +214,14 @@ Cookie[] cookies = request.getCookies() ;
 						<div class="col-6 col-6" id="notice">
 							<div class="product__item">
 								<!-- 공지사항 간단히 보기 -->
-								<p>공지사항</p>
 
 								<table class="table table-striped" style="width: 100%">
 									<thead class="table-light">
+										<div class="table-top">
+										공지사항
+										</div>
 										<tr>
-											<th>번호</th>
+											<th></th>
 											<th>제목</th>
 											<th>작성자</th>
 											<th>작성일</th>
